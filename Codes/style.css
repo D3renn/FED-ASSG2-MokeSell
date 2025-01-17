@@ -165,106 +165,58 @@
 }
 
 /* Grid Layout */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+.item-card {
+  background-color: #000;
+  color: #fff;
   padding: 20px;
+  border-radius: 8px;
+  flex: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  min-width: 300px; /* Minimum width of each card */
 }
+.item-card:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 
-.card {
-  background-color: #ddd;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
+}
+.item-card .value {
+  font-size: 1.2rem;
   font-weight: bold;
+  margin-bottom: 10px;
 }
-/****** Register Form Specific Styles ******/
-.registerForm {
+
+.item-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.item-card .link:hover {
+  text-decoration: underline;
+}
+
+  /* Horizontal Scrolling Container */
+  .item-grid-scroll {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    min-height: 100vh;
-    background: linear-gradient(to bottom right, #000000, #333333); /* Black gradient */
-    padding: 20px;
-}
+    gap: 20px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    padding: 20px 0; /* Optional: Adds padding to the scrolling area */
+    margin-left: 6rem;
+  }
+  
+  .item-grid-scroll::-webkit-scrollbar {
+    height: 8px; /* Height of the horizontal scrollbar */
+  }
+  
+  .item-grid-scroll::-webkit-scrollbar-thumb {
+    background-color: #aaa; /* Color of the scrollbar thumb */
+    border-radius: 4px; /* Rounded scrollbar thumb */
+  }
+  
+  .item-grid-scroll::-webkit-scrollbar-track {
+    background-color: #f7f7f7; /* Background of the scrollbar track */
+  }
 
-.registerForm form {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-}
 
-.registerForm .form-title {
-    font-size: 1.8rem;
-    color: #000000; /* Title color */
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.registerForm .form-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.registerForm .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 0.9rem;
-    color: #000000; /* Label color */
-}
-
-.registerForm .form-group input {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.registerForm .form-group input:focus {
-    border-color: #000000; /* Focus border color */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Focus shadow */
-}
-
-.registerForm .btn {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    background-color: #000000; /* Button background color */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.registerForm .btn:hover {
-    background-color: #333333; /* Hover effect */
-}
-
-.registerForm .btn:active {
-    background-color: #1a1a1a; /* Active button effect */
-    transform: scale(0.98);
-}
-
-/****** Mobile Responsiveness ******/
-@media (max-width: 768px) {
-    .registerForm {
-        padding: 10px;
-    }
-
-    .registerForm form {
-        padding: 20px;
-    }
-
-    .registerForm .form-title {
-        font-size: 1.5rem;
-    }
-}
