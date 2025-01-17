@@ -6,6 +6,7 @@
   
   body {
     font-family: Arial, sans-serif;
+    padding: 0px 150px;
   }
   
   .header {
@@ -96,3 +97,94 @@
     border-radius: 5px;
     font-weight: bold;
   }
+
+
+/****** Register Form Specific Styles ******/
+.registerForm {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #000000, #333333); /* Black gradient */
+    padding: 20px;
+}
+
+.registerForm form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.registerForm .form-title {
+    font-size: 1.8rem;
+    color: #000000; /* Title color */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.registerForm .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.registerForm .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #000000; /* Label color */
+}
+
+.registerForm .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.registerForm .form-group input:focus {
+    border-color: #000000; /* Focus border color */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Focus shadow */
+}
+
+.registerForm .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #000000; /* Button background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.registerForm .btn:hover {
+    background-color: #333333; /* Hover effect */
+}
+
+.registerForm .btn:active {
+    background-color: #1a1a1a; /* Active button effect */
+    transform: scale(0.98);
+}
+
+/****** Mobile Responsiveness ******/
+@media (max-width: 768px) {
+    .registerForm {
+        padding: 10px;
+    }
+
+    .registerForm form {
+        padding: 20px;
+    }
+
+    .registerForm .form-title {
+        font-size: 1.5rem;
+    }
+}
