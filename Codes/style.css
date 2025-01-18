@@ -149,74 +149,77 @@
 }
 
 /* Filter Buttons */
-.filter-buttons {
+
+.filter-bar {
   display: flex;
   justify-content: space-around;
-  margin: 20px;
+  border-top: 2px solid #ccc; /* Add a border above for separation */
+  border-bottom: 2px solid #ccc; /* Add a border below for separation */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 20px 50px 20px 50px;
 }
 
-.filter-buttons button {
-  width: 80px;
-  height: 40px;
-  background-color: #333;
-  border-radius: 20px;
+.filter {
+  display: flex;
+  gap: 100px; /* Add spacing between buttons */
+  font: 800 36px / 1.2 "futura-pt-bold", sans-serif; /* Bold and larger font */
+  text-align: center;
+}
+
+.filter-button {
+  background: none;
   border: none;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
   cursor: pointer;
+  color: #000;
+  padding: 5px 0;
+  border-bottom: 2px solid transparent; /* Default no underline */
+  transition: all 0.3s;
 }
 
-/* Grid Layout */
-.item-card {
+.filter-button:hover {
+  color: #ff4500; /* Change color on hover */
+  border-bottom: 2px solid #ff4500; /* Underline on hover */
+}
+
+.filter-button.active {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+/* Product Sections */
+.product-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-top: 2rem;
+  font: 800 45px / 1.05 "futura-pt-bold", sans-serif;
+  color: #000;
+  margin-bottom:0px ;
+}
+
+.product-section {
+  display: none; /* Hide sections by default */
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.product {
   background-color: #000;
   color: #fff;
   padding: 20px;
   border-radius: 8px;
   flex: 1;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
   min-width: 300px; /* Minimum width of each card */
 }
-.item-card:hover {
-  transform: translateY(-10px);
-  transition: transform 0.3s;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 
+/* Show all sections when "All" is selected */
+.product-section.show {
+  display: block;
 }
-.item-card .value {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.item-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  line-height: 1.2;
-}
-
-.item-card .link:hover {
-  text-decoration: underline;
-}
-
-  /* Horizontal Scrolling Container */
-  .item-grid-scroll {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    scroll-behavior: smooth; /* Smooth scrolling effect */
-    padding: 20px 0; /* Optional: Adds padding to the scrolling area */
-    margin-left: 6rem;
-  }
-  
-  .item-grid-scroll::-webkit-scrollbar {
-    height: 8px; /* Height of the horizontal scrollbar */
-  }
-  
-  .item-grid-scroll::-webkit-scrollbar-thumb {
-    background-color: #aaa; /* Color of the scrollbar thumb */
-    border-radius: 4px; /* Rounded scrollbar thumb */
-  }
-  
-  .item-grid-scroll::-webkit-scrollbar-track {
-    background-color: #f7f7f7; /* Background of the scrollbar track */
-  }
-
-
