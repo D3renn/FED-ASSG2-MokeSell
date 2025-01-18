@@ -149,7 +149,6 @@
 }
 
 /* Filter Buttons */
-
 .filter-bar {
   display: flex;
   justify-content: space-around;
@@ -191,35 +190,87 @@
 }
 
 /* Product Sections */
-.product-section h2 {
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  margin-left: 6rem;
+}
+
+.section-header h2 {
   font-size: 2rem;
   font-weight: bold;
   padding-top: 2rem;
   font: 800 45px / 1.05 "futura-pt-bold", sans-serif;
   color: #000;
-  margin-bottom:0px ;
+  margin-bottom:0px;
+}
+
+.section-header .view-all {
+  font-size: 1rem;
+  background-color: #f1f1f1;
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none;
+}
+
+.section-header .view-all:hover {
+  text-decoration: underline;
 }
 
 .product-section {
-  display: none; /* Hide sections by default */
+  display: none;
   margin: 20px 0;
   padding: 15px;
-  border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.product {
+/* Horizontal Scroll for Product Cards */
+.product-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling effect */
+  padding: 20px 0; /* Optional: Adds padding to the scrolling area */
+  margin-left: 6rem;
+}
+
+/* Scrollbar Styling for Chrome */
+.product-scroll::-webkit-scrollbar {
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+.product-scroll::-webkit-scrollbar-thumb {
+  background-color: #aaa; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded scrollbar thumb */
+}
+
+.product-scroll::-webkit-scrollbar-track {
+  background-color: #f7f7f7; /* Background of the scrollbar track */
+}
+
+/* Product Cards */
+.product-card {
   background-color: #000;
   color: #fff;
   padding: 20px;
   border-radius: 8px;
   flex: 1;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
   min-width: 300px; /* Minimum width of each card */
 }
 
-/* Show all sections when "All" is selected */
+.product-card:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+}
+
+/* Show selected category */
 .product-section.show {
   display: block;
 }
