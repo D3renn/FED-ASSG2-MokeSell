@@ -89,4 +89,5 @@ function resetGame() {
 
 // Initialize Game
 startTimer(12);
+resetGame();
 updateStats();
