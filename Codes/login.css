@@ -2,14 +2,25 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.logo {
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-top: 60px;
+}
+
 .loginForm {
     max-width: 400px;
-    margin: 50px auto;
+    margin: 100px auto 30px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-}
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}   
 
 .form-title {
     text-align: center;
@@ -20,31 +31,45 @@ body {
     margin-bottom: 15px;
 }
 
-.form-control {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
+/* Button Default */
 .btn {
-    display: block;
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
+/* Hover Effect (Button Pops Forward & Turns Green) */
 .btn:hover {
-    background-color: #45a049;
+    transform: scale(1.1);
+    background-color: #28a745; /* Green */
+}
+
+/* Press Effect (Stays Green on Click) */
+.btn:active {
+    background-color: #28a745; /* Green */
+    transform: scale(1);
+}
+
+/* Invalid Login Animation (Shake + Red Color) */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
 }
 
 .feedback {
-    margin-top: 10px;
+    animation: shake 0.5s ease-in-out;
+    color: #dc3545; /* Red */
+}
+
+.signupLink {
     text-align: center;
-    color: #d9534f;
+    padding-bottom:50px;
+
 }
