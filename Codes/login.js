@@ -30,7 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.getElementById("feedback").textContent =
                         "Login successful!";
                     // Store the user ID in localStorage
+                    localStorage.setItem("loginId", user._id); 
                     localStorage.setItem("userId", user.userID); 
+                    localStorage.setItem("username", user.username); 
+                    localStorage.setItem("gamepoints", (user.gamepoints)?user.gamepoints:0); 
                     // let loggedInUSerId = localStorage.getItem("userId"); - to check if user is logged in or not.
                     // if loggedInUSerId is empty or undefined, means user not logged in.
                     // logout
@@ -49,12 +52,4 @@ document.addEventListener("DOMContentLoaded", () => {
                     "Error during login.";
             });
     });
-});
-
-var animation = lottie.loadAnimation({
-    container: document.getElementById('lottieBackground'),
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: 'https://assets9.lottiefiles.com/packages/lf20_abstractfluidbackground.json' // Replace with the URL of your chosen Lottie JSON file
 });

@@ -1,3 +1,4 @@
+
 const tiles = document.querySelectorAll(".tile");
 const pointsDisplay = document.getElementById("points");
 const livesDisplay = document.getElementById("lives");
@@ -7,6 +8,11 @@ let points = 0;
 let lives = 3;
 let flippedTiles = [];
 let matchedPairs = 0;
+
+import { checkUserLoggedIn } from './utils.js';
+
+// need to be logged in to play game
+checkUserLoggedIn();
 
 // Timer Logic
 function startTimer(durationInHours) {
@@ -63,16 +69,47 @@ function checkMatch() {
   updateStats();
 }
 
+function addPointsToUser(pointsToAdd){
+  const APIKEY = "678a13b229bb6d4dd6c56bd2";
+  const BASE_URL = "https://mokesell-2304.restdb.io/rest/accounts/";
+  let loginId = localStorage.getItem("loginId");
+  let gamepoints = +localStorage.getItem("gamepoints"); // + sign convert string to number.
+  fetch(BASE_URL + `${loginId}`, {
+    method: "PATCH",
+    headers: {
+        "Content-Type": "application/json",
+        "x-apikey": APIKEY,
+    },
+    body:  JSON.stringify({
+      "gamepoints":gamepoints+pointsToAdd
+    })
+})
+    .then((response) => response.json())
+    .then((data) => {
+      if(data._id != undefined){
+        localStorage.setItem("gamepoints", gamepoints+pointsToAdd); 
+      }
+      else{
+        console.error("Error during game points update:", data);
+      }  
+    })
+    .catch((error) => {
+        console.error("Error during game points update:", error);
+    });
+}
+
 function updateStats() {
   pointsDisplay.textContent = points;
   livesDisplay.textContent = lives;
-
+  
   if (lives === 0) {
+    addPointsToUser(points); // update points when lose
     alert("Game Over!");
     resetGame();
   }
 
   if (matchedPairs === 8) {
+    addPointsToUser(points); // update points when win
     alert("Congratulations! You've matched all pairs!");
     resetGame();
   }
