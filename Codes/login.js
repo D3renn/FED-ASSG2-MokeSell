@@ -50,3 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     });
 });
+
+var animation = lottie.loadAnimation({
+    container: document.getElementById('lottieBackground'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'https://assets9.lottiefiles.com/packages/lf20_abstractfluidbackground.json' // Replace with the URL of your chosen Lottie JSON file
+});
