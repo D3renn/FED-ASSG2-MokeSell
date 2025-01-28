@@ -37,14 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function routeGame() {
     window.location.href = "game.html";
 }
-<<<<<<< HEAD
-
-function routeHome() {
-    window.location.href = "index.html";
-}
-=======
 function routeProfile() {
     window.location.href = "profile.html";
 }
 
->>>>>>> b77978afffe5a1ac6d9080b48b7844df8c5a33d3
