@@ -123,7 +123,7 @@
 }
 
 .categories button:hover {
-
+  
   border-radius: 10px;
   transform: translateY(-5px);
   transition: transform 0.3s;
@@ -164,7 +164,7 @@
 /* Show dropdown on hover */
 .dropdown:hover .dropdown-content {
   display: block;
-
+  
 }
 
 /* Filter Buttons */
