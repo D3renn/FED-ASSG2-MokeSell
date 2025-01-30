@@ -41,3 +41,6 @@ function routeProfile() {
     window.location.href = "profile.html";
 }
 
+function routeHome() {
+    window.location.href = "index.html";
+}

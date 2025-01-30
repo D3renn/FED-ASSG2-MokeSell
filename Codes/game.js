@@ -1,4 +1,3 @@
-
 const tiles = document.querySelectorAll(".tile");
 const pointsDisplay = document.getElementById("points");
 const livesDisplay = document.getElementById("lives");
@@ -45,7 +44,7 @@ tiles.forEach((tile) => {
     flippedTiles.push(tile);
 
     if (flippedTiles.length === 2) {
-      checkMatch();
+      setTimeout(checkMatch, 2000); // Wait 3 seconds before checking match
     }
   });
 });
@@ -128,3 +127,41 @@ function resetGame() {
 startTimer(12);
 resetGame();
 updateStats();
+
+function fetchLeaderboard() {
+  const APIKEY = "678a13b229bb6d4dd6c56bd2";
+  const BASE_URL = "https://mokesell-2304.restdb.io/rest/accounts/";
+
+  fetch(BASE_URL, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "x-apikey": APIKEY,
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      // Sort users by gamepoints in descending order
+      const sortedUsers = data.sort((a, b) => b.gamepoints - a.gamepoints);
+      const top3Users = sortedUsers.slice(0, 3); // Get top 3 users
+
+      // Display the top 3 users in the leaderboard
+      const leaderboardList = document.getElementById("leaderboard-list");
+      leaderboardList.innerHTML = top3Users
+        .map(
+          (user, index) => `
+        <li>
+          <span>${index + 1}. ${user.username || "Anonymous"}</span>
+          <span>${user.gamepoints || 0} points</span>
+        </li>
+      `
+        )
+        .join("");
+    })
+    .catch((error) => {
+      console.error("Error fetching leaderboard:", error);
+    });
+}
+
+// Call fetchLeaderboard when the game initializes
+fetchLeaderboard();
