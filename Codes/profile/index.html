@@ -25,31 +25,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 </head>
 <body>
-    <!-- Header Section -->
     <header class="header">
         <div class="top-bar">
-            <div class="left-icons">
-                <button class="menu-btn">MENU</button>
-                <span class="icon">HOME</span>
+          <h1 class="logo">MokeSell</h1>
+          <div class="search-container">
+            <button class="search-icon"><i class="fas fa-search"></i></button>
+            <input type="text" class="search-bar" placeholder="Search Here...">
+            <button class="cam-icon"><i class="fas fa-camera"></i></button>
+          </div>
+          <div class="right-icons">
+            <div class="icon-container">
+              <button class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+              <span>Menu</span>
             </div>
-            <h1 class="logo">MokeSell</h1>
-            <div class="search-container">
-                <button class="search-icon">SEARCH</button>
-                <input
-                type="text"
-                class="search-bar"
-                placeholder="Search Here..."
-                />
-                <button class="cam-icon">CAM</button>
+            <div class="icon-container">
+              <span class="icon-btn" onclick="routeHome()"><i class="fas fa-home"></i></span>
+              <span>Home</span>
             </div>
-            <div class="right-icons">
-                <button id="gameBtn" onclick="routeGame()">GAME</button>
-                <button onclick="routeProfile()">PROFILE</button>
-                <button>LISTING</button>
-                <button>CATEGORIES</button>
+            <div class="icon-container">
+              <button class="icon-btn" onclick="routeGame()"><i class="fas fa-gamepad"></i></button>
+              <span>Game</span>
             </div>
+            <div class="icon-container">
+              <button class="icon"><i class="fas fa-user"></i></button>
+              <span>Profile</span>
+            </div>
+            <div class="icon-container">
+              <button class="icon-btn"><i class="fa fa-cloud"></i></button>
+              <span>Sell</span>
+            </div>
+          </div>
         </div>
-    </header>
+      </header>
     
     <!-- Categories Section -->
     <nav class="categories">
@@ -86,5 +93,6 @@
         <p><strong>Game Points:</strong> <span id="gamepointsDisplay"></span></p>
     </div>
     <script src="/src/scripts/profile.js" type="module"></script>
+    <script src="/src/scripts/script.js"></script>
 </body>
 </html>
