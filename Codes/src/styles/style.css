@@ -10,12 +10,13 @@
   background-color: #333;
   color: white;
   padding: 20px;
+  text-align: center;
   position: relative;
 }
 
 .logo {
   font-family: 'Black Ops One', sans-serif;
-  font-size: 35px;
+  font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -27,24 +28,10 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
 }
 
 /* Icons & Menu */
- .right-icons {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-}
-
-.icon-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-
-.icon-container button {
+.menu-btn, span.icon {
   background: none;
   border: none;
   color: white;
@@ -52,9 +39,17 @@
   cursor: pointer;
 }
 
-.icon-container span {
-  font-size: 15px;
+.left-icons, .right-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.right-icons button {
+  background: none;
+  border: none;
   color: white;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 /* Search Bar */
@@ -65,7 +60,6 @@
   padding: 5px;
   border-radius: 20px;
   overflow: hidden;
-  width: 300px;
 }
 
 .search-bar {
@@ -80,6 +74,7 @@
   border: none;
   padding: 5px;
   cursor: pointer;
+  
 }
 
 /* Categories Section */
@@ -252,7 +247,7 @@
 }
 
 .product-section {
-  display: none;
+  /* display: none; */
   margin: 20px 0;
   padding: 15px;
   border-radius: 5px;
@@ -288,16 +283,33 @@
   color: #fff;
   padding: 20px;
   border-radius: 8px;
-  flex: 1;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   min-width: 300px; /* Minimum width of each card */
+  cursor: pointer;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  max-height: 150px; /* Limit the height of the image */
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #ccc;
 }
 
 .product-card:hover {
   transform: translateY(-10px);
   transition: transform 0.3s;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  color: #fff;
   background-color: #111; /* Slightly lighter */
 }
 

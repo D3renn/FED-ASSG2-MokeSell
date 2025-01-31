@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MokeSell</title>
+    <meta name="viewport"="width=device-width, initial-scale=1.0" />
+    <title>Search Results - MokeSell</title>
     <link rel="stylesheet" href="/src/styles/style.css" />
+    <link rel="stylesheet" href="/src/styles/search.css" />
     <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
     />
-    
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -49,42 +49,20 @@
             </div>
         </div>
     </header>
-    
-    <!-- Categories Section -->
-    <nav class="categories">
-        <button>❤️ Like</button>
-        <div class="dropdown">
-            <button class="dropbtn">🚚 Delivery</button>
-            <div class="dropdown-content">
-                <a href="#">Normal Delivery</a>
-                <a href="#">Express Delivery</a>
-            </div>
+
+    <!-- Search Results Section -->
+    <div class="search-results">
+        <h2>Search results for '<span id="search-query"></span>'</h2>
+        <div class="filter-bar">
+            <button class="filter-button">Category</button>
+            <button class="filter-button">Condition</button>
+            <button class="filter-button">Price</button>
         </div>
-        <div class="dropdown">
-            <button class="dropbtn">
-                <i class="bi bi-headset"></i> Customer Service
-            </button>
-            <div class="dropdown-content">
-                <a href="#">Live Chat</a>
-                <a href="#">Help Center</a>
-                <a href="#">Report Issue</a>
-            </div>
+        <div class="product-grid" id="product-grid">
+            <p>Loading search results...</p>
         </div>
-        <button onclick="window.location.href='/categories'">📂 Categories</button>
-        <button>✅ MokeSell Choice</button>
-    </nav>
-    <!-- Profile Details -->
-    <!-- Profile Section -->
-    <header class="header">
-        <h1 class="logo">MokeSell - Profile</h1>
-    </header>
-    
-    <div class="profile-section">
-        <h3>User Profile</h3>
-        <p><strong>Username:</strong> <span id="usernameDisplay"></span></p>
-        <p><strong>Game Points:</strong> <span id="gamepointsDisplay"></span></p>
     </div>
-    <script src="/src/scripts/profile.js" type="module"></script>
+    <script src="/src/scripts/search.js"></script>
     <script src="/src/scripts/script.js"></script>
 </body>
 </html>

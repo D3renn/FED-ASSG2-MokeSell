@@ -2,6 +2,7 @@ import { checkUserLoggedIn } from './utils.js';
 
 const APIKEY = "678a13b229bb6d4dd6c56bd2";
 const BASE_URL = "https://mokesell-2304.restdb.io/rest/listings";
+const CATEGORIES_URL = "https://mokesell-2304.restdb.io/rest/categories";
 
 document.addEventListener("DOMContentLoaded", () => {
     checkUserLoggedIn(); // Check if the user is logged in
@@ -15,8 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
             title: "Title of Item",
             description: "Description of Item",
             price: 0,
-            status: "draft",
             quantity: 1,
+            condition: "New", // Default placeholder value
+            brand: "Brand Name", // Default placeholder value
+            dealMethod: "Meet-up or Delivery", // Default placeholder value
         };
 
         fetch(BASE_URL, {
@@ -59,17 +62,31 @@ function fetchUserListings() {
             listingList.innerHTML = '<p>No listings available. Create a new listing to get started.</p>';
         } else {
             data.forEach((listing) => {
+                const categories = listing.categories ? listing.categories.map(category => `<span class="badge bg-secondary">${category.categoryName}</span>`).join(' ') : '';
+                const condition = listing.condition ? `<p class="card-text text-muted">Condition: ${listing.condition}</p>` : '';
+                const brand = listing.brand ? `<p class="card-text text-muted">Brand: ${listing.brand}</p>` : '';
+                const dealMethod = listing.dealMethod ? `<p class="card-text text-muted">Deal Method: ${listing.dealMethod}</p>` : '';
+                const size = listing.size ? `<p class="card-text text-muted">Size: ${listing.size}</p>` : '';
                 const listingCard = `
                     <div class="card mb-3">
                         <div class="card-body">
-                            <h4 class="card-title">${listing.title}</h4>
-                            <p class="card-text text-muted">Description: ${listing.description}</p>
-                            <p class="card-text text-muted">Price: $${listing.price}</p>
-                            <p class="card-text text-muted">Status: ${listing.status}</p>
-                            <p class="card-text text-muted">Quantity: ${listing.quantity}</p>
-                            <div class="d-flex justify-content-end">
-                                <button class="btn btn-secondary me-2" onclick="editListing('${listing._id}')">Edit</button>
-                                <button class="btn btn-danger" onclick="deleteListing('${listing._id}')">Delete</button>
+                            <div class="d-flex">
+                                <img src="/src/images/${listing.image}" alt="${listing.title}" style="width: 100px; height: 100px; object-fit: cover; margin-right: 10px;">
+                                <div>
+                                    <h4 class="card-title">${listing.title}</h4>
+                                    <p class="card-text text-muted">Description: ${listing.description}</p>
+                                    <p class="card-text text-muted">Price: $${listing.price}</p>
+                                    <p class="card-text text-muted">Quantity: ${listing.quantity}</p>
+                                    ${condition}
+                                    ${brand}
+                                    ${dealMethod}
+                                    ${size}
+                                    <p class="card-text text-muted">Categories: ${categories}</p>
+                                    <div class="d-flex justify-content-end">
+                                        <button class="btn btn-secondary me-2" onclick="editListing('${listing._id}')">Edit</button>
+                                        <button class="btn btn-danger" onclick="deleteListing('${listing._id}')">Delete</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
