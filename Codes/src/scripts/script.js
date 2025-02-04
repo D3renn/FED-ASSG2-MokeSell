@@ -33,15 +33,46 @@ document.addEventListener("DOMContentLoaded", function () {
     filterCategory("all");
 });
 
-// go game.html on click
+
+function setupSearch() {
+    const searchBar = document.querySelector(".search-bar");
+    const searchButton = document.querySelector(".search-icon");
+
+    searchButton.addEventListener("click", () => {
+        const query = searchBar.value.trim();
+        if (query) {
+            localStorage.setItem("searchQuery", query);
+            window.location.href = "/search";
+        }
+    });
+
+    searchBar.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            const query = searchBar.value.trim();
+            if (query) {
+                localStorage.setItem("searchQuery", query);
+                window.location.href = "/search";
+            }
+        }
+    });
+}
+
 function routeGame() {
-    window.location.href = "game.html";
+    window.location.href = "/game";
 }
 
 function routeHome() {
-    window.location.href = "index.html";
+    window.location.href = "/";
 }
 
 function routeProfile() {
-    window.location.href = "profile.html";
+    window.location.href = "/profile";
+}
+
+function routeListing() {
+    window.location.href = "/listing";
+}
+
+function routeChat() {
+    window.location.href = "/chat";
 }
