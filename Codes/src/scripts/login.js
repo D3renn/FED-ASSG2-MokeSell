@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // logout
                 // localStorage.removeItem("userId")
                 
-                window.location.href = "/"; // This redirects to index.html
+                window.location.href = "/"; // This redirects to root
             } else {
                 console.error("Invalid username or password.");
                 document.getElementById("feedback").textContent =
@@ -53,3 +53,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
