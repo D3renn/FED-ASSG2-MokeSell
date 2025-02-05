@@ -18,7 +18,7 @@ function fetchCategories() {
     .then((response) => response.json())
     .then((data) => {
         const productList = document.getElementById("product-list");
-        productList.innerHTML = '';
+        productList.innerHTML = ''; // Clear the product list only once
 
         if (data.length === 0) {
             productList.innerHTML = '<p>No categories available.</p>';
@@ -45,7 +45,7 @@ function fetchCategories() {
 }
 
 function fetchListings() {
-    fetch(LISTINGS_URL, {
+    fetch(`${LISTINGS_URL}?q={"quantity":{"$gt":0}}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -54,10 +54,8 @@ function fetchListings() {
     })
     .then((response) => response.json())
     .then((data) => {
-        const productList = document.getElementById("product-list");
-        productList.innerHTML = '';
-
         if (data.length === 0) {
+            const productList = document.getElementById("product-list");
             productList.innerHTML = '<p>No listings available.</p>';
         } else {
             data.forEach((listing) => {
@@ -77,10 +75,11 @@ function fetchListings() {
                                 </div>
                                 <div class="product-scroll" id="${categoryName}-list"></div>
                             `;
-                            productList.appendChild(categorySection);
+                            document.getElementById("product-list").appendChild(categorySection);
                         }
     
                         const categoryList = document.getElementById(`${categoryName}-list`);
+                        categoryList.innerHTML = ''; // Clear the loading text
                         const listingCard = `
                             <div class="product-card" onclick="viewListing('${listing._id}')">
                                 <img src="/src/images/${listing.image}" alt="${listing.title}">

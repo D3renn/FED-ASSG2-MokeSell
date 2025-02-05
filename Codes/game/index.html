@@ -32,41 +32,22 @@
             </div>
             <div class="right-icons">
                 <button id="gameBtn" onclick="routeGame()">GAME</button>
+                <button id="chatBtn" onclick="routeChat()">CHAT</button>
                 <button onclick="routeListing()">MY LISTING</button>
                 <button onclick="routeProfile()">PROFILE</button>
             </div>
         </div>
     </header>
     <div class="game-container">
-        <!-- Game Header -->
         <div class="game-header">
-            <div class="points">Points: <span id="points">0</span>pts</div>
-            <div class="lives">Life: <span id="lives">3</span>/3</div>
-            <div class="timer">Next game in: <span id="timer">12:00:00</span></div>
+            <div class="lives">Lives: <span id="lives">3</span>/3</div>
+            <div class="points">Points: <span id="points">0</span></div>
+            <div class="timer">Next play: <span id="timer">Ready!</span></div>
         </div>
-        
-        <!-- Game Board -->
-        <div class="game-board">
-            <!-- 4x4 tiles -->
-            <div class="tile" data-pair="1"></div>
-            <div class="tile" data-pair="2"></div>
-            <div class="tile" data-pair="3"></div>
-            <div class="tile" data-pair="4"></div>
-            <div class="tile" data-pair="3"></div>
-            <div class="tile" data-pair="1"></div>
-            <div class="tile" data-pair="2"></div>
-            <div class="tile" data-pair="4"></div>
-            <div class="tile" data-pair="5"></div>
-            <div class="tile" data-pair="6"></div>
-            <div class="tile" data-pair="7"></div>
-            <div class="tile" data-pair="8"></div>
-            <div class="tile" data-pair="8"></div>
-            <div class="tile" data-pair="7"></div>
-            <div class="tile" data-pair="6"></div>
-            <div class="tile" data-pair="5"></div>
-        </div>
+        <div class="game-board" id="gameBoard"></div>
     </div>
     
     <script src="/src/scripts/game.js" type="module"></script>
     <script src="/src/scripts/script.js"></script>
 </body>
+</html>

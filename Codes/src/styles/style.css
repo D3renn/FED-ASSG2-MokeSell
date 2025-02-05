@@ -221,12 +221,13 @@
   align-items: center;
   margin: 20px;
   margin-left: 6rem;
+  margin-top: 0;
 }
 
 .section-header h2 {
   font-size: 2rem;
   font-weight: bold;
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
   font: 800 45px / 1.05 "futura-pt-bold", sans-serif;
   color: #000;
   margin-bottom:0px;
@@ -248,7 +249,7 @@
 
 .product-section {
   /* display: none; */
-  margin: 20px 0;
+  /* margin: 20px 0; */
   padding: 15px;
   border-radius: 5px;
 }
@@ -316,4 +317,59 @@
 /* Show selected category */
 .product-section.show {
   display: block;
+}
+
+/* Profile Section */
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-details {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-item {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.profile-item strong {
+  font-weight: bold;
+}
+
+/* Coupon Redemption Section */
+.coupon-section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.coupon-card {
+  margin-bottom: 20px;
+}
+
+.coupon-card .card {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 15px; /* Make the card rounder */
+}
+
+.coupon-card .card-body {
+  text-align: center;
+}
+
+.coupon-card .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.coupon-card .card-text {
+  font-size: 1rem;
+  margin-bottom: 15px;
 }

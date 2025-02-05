@@ -72,3 +72,8 @@ function routeProfile() {
 function routeListing() {
     window.location.href = "/listing";
 }
+
+function routeChat() {
+    window.location.href = "/chat";
+}
+

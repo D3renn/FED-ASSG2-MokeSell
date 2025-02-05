@@ -1,129 +1,142 @@
-const tiles = document.querySelectorAll(".tile");
-const pointsDisplay = document.getElementById("points");
-const livesDisplay = document.getElementById("lives");
-const timerDisplay = document.getElementById("timer");
-
-let points = 0;
-let lives = 3;
-let flippedTiles = [];
-let matchedPairs = 0;
-
 import { checkUserLoggedIn } from "./utils.js";
+
+const EMOJIS = ['🎮', '👾', '🕹️', '🎲', '🎯', '🎨', '🧩', '🎪'];
+const gameBoard = document.getElementById('gameBoard');
+const pointsDisplay = document.getElementById('points');
+const livesDisplay = document.getElementById('lives');
+const timerDisplay = document.getElementById('timer');
+
+let flippedTiles = [];
+let points = 0;
+let lives = 10;
+let gameActive = true;
 
 // need to be logged in to play game
 checkUserLoggedIn();
 
-// Timer Logic
-function startTimer(durationInHours) {
-    let remainingTime = durationInHours * 60 * 60; // convert hours to seconds
-    const timerInterval = setInterval(() => {
-        if (remainingTime <= 0) {
-            clearInterval(timerInterval);
-            timerDisplay.textContent = "Ready to play!";
-            return;
-        }
-        
-        const hours = Math.floor(remainingTime / 3600);
-        const minutes = Math.floor((remainingTime % 3600) / 60);
-        const seconds = remainingTime % 60;
-        
-        timerDisplay.textContent = `${hours.toString().padStart(2, "0")}:${minutes
-            .toString()
-            .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
-            
-            remainingTime--;
-        }, 1000);
+function initializeGame() {
+    const lastPlayed = localStorage.getItem('lastPlayed');
+    if (lastPlayed && Date.now() - lastPlayed < 43200000) { // 12 hours
+        gameActive = false;
+        updateTimer();
     }
     
-    // Flipping Logic
-    tiles.forEach((tile) => {
-        tile.addEventListener("click", () => {
-            if (tile.classList.contains("flipped") || flippedTiles.length === 2) return;
-            
-            tile.classList.add("flipped");
-            flippedTiles.push(tile);
-            
-            if (flippedTiles.length === 2) {
-                checkMatch();
-            }
-        });
+    const emojis = [...EMOJIS, ...EMOJIS].sort(() => Math.random() - 0.5);
+    gameBoard.innerHTML = '';
+    
+    emojis.forEach(emoji => {
+        const tile = document.createElement('div');
+        tile.className = 'tile';
+        tile.textContent = emoji;
+        tile.dataset.emoji = emoji;
+        tile.addEventListener('click', handleTileClick);
+        gameBoard.appendChild(tile);
     });
+}
+
+function handleTileClick(e) {
+    if (!gameActive || flippedTiles.length === 2 || e.target.classList.contains('flipped')) return;
     
-    function checkMatch() {
-        const [tile1, tile2] = flippedTiles;
-        
-        if (tile1.dataset.pair === tile2.dataset.pair) {
-            matchedPairs++;
-            points += 50 - (flippedTiles.length - 1) * 20;
-            flippedTiles = [];
+    const tile = e.target;
+    tile.classList.add('flipped');
+    flippedTiles.push(tile);
+    
+    if (flippedTiles.length === 2) {
+        setTimeout(checkMatch, 800);
+    }
+}
+
+function checkMatch() {
+    const [tile1, tile2] = flippedTiles;
+    const match = tile1.dataset.emoji === tile2.dataset.emoji;
+    
+    if (match) {
+        points += 100;
+        tile1.classList.add('matched');
+        tile2.classList.add('matched');
+        checkWin();
+    } else {
+        lives--;
+        tile1.classList.remove('flipped');
+        tile2.classList.remove('flipped');
+        if (lives === 0) handleGameEnd(false);
+    }
+    
+    flippedTiles = [];
+    updateDisplay();
+}
+
+function checkWin() {
+    if (document.querySelectorAll('.matched').length === EMOJIS.length * 2) {
+        handleGameEnd(true);
+    }
+}
+
+function handleGameEnd(won) {
+    gameActive = false;
+    localStorage.setItem('lastPlayed', Date.now());
+    if (won) {
+        console.log('Congratulations! You won!');
+        points += lives * 50;
+    }
+    alert(won ? `You won! Points: ${points}` : `Game Over! Points: ${points}`);
+    addPointsToUser(points);
+    setTimeout(updateTimer, 1000);
+}
+
+function updateDisplay() {
+    pointsDisplay.textContent = points;
+    livesDisplay.textContent = lives;
+}
+
+function updateTimer() {
+    const lastPlayed = localStorage.getItem('lastPlayed');
+    if (!lastPlayed) return;
+    
+    const remainingTime = 43200000 - (Date.now() - lastPlayed);
+    if (remainingTime > 0) {
+        const hours = Math.floor(remainingTime / 3600000);
+        const minutes = Math.floor((remainingTime % 3600000) / 60000);
+        const seconds = Math.floor((remainingTime % 60000) / 1000);
+        timerDisplay.textContent = `${hours}h ${minutes}m ${seconds}s`;
+        setTimeout(updateTimer, 1000);
+    } else {
+        gameActive = true;
+        timerDisplay.textContent = 'Ready!';
+        initializeGame();
+    }
+}
+
+function addPointsToUser(pointsToAdd) {
+    const APIKEY = "678a13b229bb6d4dd6c56bd2";
+    const BASE_URL = "https://mokesell-2304.restdb.io/rest/accounts/";
+    let loginId = localStorage.getItem("loginId");
+    let gamepoints = +localStorage.getItem("gamepoints") || 0;
+
+    fetch(BASE_URL + `${loginId}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            "x-apikey": APIKEY,
+        },
+        body: JSON.stringify({
+            gamepoints: gamepoints + pointsToAdd,
+        }),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        if (data._id != undefined) {
+            localStorage.setItem("gamepoints", gamepoints + pointsToAdd);
         } else {
-            lives--;
-            setTimeout(() => {
-                tile1.classList.remove("flipped");
-                tile2.classList.remove("flipped");
-                flippedTiles = [];
-            }, 1000);
+            console.error("Error during game points update:", data);
         }
-        
-        updateStats();
-    }
-    
-    function addPointsToUser(pointsToAdd) {
-        const APIKEY = "678a13b229bb6d4dd6c56bd2";
-        const BASE_URL = "https://mokesell-2304.restdb.io/rest/accounts/";
-        let loginId = localStorage.getItem("loginId");
-        let gamepoints = +localStorage.getItem("gamepoints"); // + sign convert string to number.
-        fetch(BASE_URL + `${loginId}`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-                "x-apikey": APIKEY,
-            },
-            body: JSON.stringify({
-                gamepoints: gamepoints + pointsToAdd,
-            }),
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            if (data._id != undefined) {
-                localStorage.setItem("gamepoints", gamepoints + pointsToAdd);
-            } else {
-                console.error("Error during game points update:", data);
-            }
-        })
-        .catch((error) => {
-            console.error("Error during game points update:", error);
-        });
-    }
-    
-    function updateStats() {
-        pointsDisplay.textContent = points;
-        livesDisplay.textContent = lives;
-        
-        if (lives === 0) {
-            addPointsToUser(points); // update points when lose
-            alert("Game Over!");
-            resetGame();
-        }
-        
-        if (matchedPairs === 8) {
-            addPointsToUser(points); // update points when win
-            alert("Congratulations! You've matched all pairs!");
-            resetGame();
-        }
-    }
-    
-    function resetGame() {
-        lives = 3;
-        points = 0;
-        matchedPairs = 0;
-        flippedTiles = [];
-        tiles.forEach((tile) => tile.classList.remove("flipped"));
-        updateStats();
-    }
-    
-    // Initialize Game
-    startTimer(12);
-    resetGame();
-    updateStats();
-    
+    })
+    .catch((error) => {
+        console.error("Error during game points update:", error);
+    });
+}
+
+// Initialize the game
+initializeGame();
+updateDisplay();
+if (!gameActive) updateTimer();

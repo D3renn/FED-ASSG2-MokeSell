@@ -14,9 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     const query = {
-        "$or": [
-            { "title": { "$regex": caseInsensitiveSearchQuery} },
-            { "description": { "$regex": caseInsensitiveSearchQuery} },
+        "$and": [
+            {
+                "$or": [
+                    { "title": { "$regex": caseInsensitiveSearchQuery} },
+                    { "description": { "$regex": caseInsensitiveSearchQuery} },
+                ]
+            },
+            { "quantity": { "$gt": 0 } }
         ]
     };
 

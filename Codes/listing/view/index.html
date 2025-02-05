@@ -44,6 +44,7 @@
             </div>
             <div class="right-icons">
                 <button id="gameBtn" onclick="routeGame()">GAME</button>
+                <button id="chatBtn" onclick="routeChat()">CHAT</button>
                 <button onclick="routeListing()">MY LISTING</button>
                 <button onclick="routeProfile()">PROFILE</button>
             </div>
@@ -93,11 +94,11 @@
         <div class="seller-info">
             <h3>Meet the Seller</h3>
             <div class="seller-profile">
-                <div class="profile-picture-placeholder"></div>
+                <img src="/src/images/avatar-placeholder.jpg" alt="Profile Picture" class="profile-picture-placeholder" />
                 <p class="seller-username">user</p>
             </div>
             <div class="seller-actions">
-                <button class="btn btn-primary">Purchase</button>
+                <button class="btn btn-primary" id="purchaseBtn">Purchase</button>
                 <button class="btn btn-secondary">Chat</button>
             </div>
         </div>
@@ -114,6 +115,66 @@
             <p>5.0 - 1 Review</p>
         </div>
     </div>
+
+    <!-- Purchase Popup -->
+    <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="purchaseModalLabel">Make an Offer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Current Price: <span class="product-price">S$10</span></p>
+                    <div class="mb-3">
+                        <label for="offerPrice" class="form-label">Your Offer</label>
+                        <input type="number" class="form-control" id="offerPrice" placeholder="Enter your offer" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="offerMessage" class="form-label">Message</label>
+                        <textarea class="form-control" id="offerMessage" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <h5>Payment Method</h5>
+                    <div class="mb-3">
+                        <label class="form-label">Select Payment Method</label>
+                        <div>
+                            <input type="radio" id="cash" name="paymentMethod" value="cash">
+                            <label for="cash">Cash</label>
+                            <input type="radio" id="visa" name="paymentMethod" value="visa">
+                            <label for="visa"><img src="/src/images/visa.png" alt="Visa" width="50"></label>
+                            <input type="radio" id="mastercard" name="paymentMethod" value="mastercard">
+                            <label for="mastercard"><img src="/src/images/mastercard.png" alt="MasterCard" width="50"></label>
+                        </div>
+                    </div>
+                    <div id="creditCardInfo" style="display: none;">
+                        <div class="mb-3">
+                            <label for="cardHolderName" class="form-label">Card Holder Name</label>
+                            <input type="text" class="form-control" id="cardHolderName" placeholder="Enter card holder name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="cardNumber" class="form-label">Card Number</label>
+                            <input type="text" class="form-control" id="cardNumber" placeholder="Enter card number">
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="cardExpiry" class="form-label">Expiry Date</label>
+                                <input type="text" class="form-control" id="cardExpiry" placeholder="MM/YY">
+                            </div>
+                            <div class="col">
+                                <label for="cardCVC" class="form-label">CVC</label>
+                                <input type="text" class="form-control" id="cardCVC" placeholder="CVC">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="sendOfferBtn">Send Offer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="/src/scripts/listingView.js" type="module"></script>
     <script src="/src/scripts/script.js"></script>
 </body>

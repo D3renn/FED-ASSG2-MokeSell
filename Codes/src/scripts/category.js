@@ -26,7 +26,7 @@ function fetchCategoryName(categoryId) {
 }
 
 function fetchCategoryListings(categoryId) {
-    fetch(`${BASE_URL}?q={"categories._id":"${categoryId}"}&h={"$orderby": {"_changed": -1}}`, {
+    fetch(`${BASE_URL}?q={"categories._id":"${categoryId}","quantity":{"$gt":0}}&h={"$orderby": {"_changed": -1}}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
