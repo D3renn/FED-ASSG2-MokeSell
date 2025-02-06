@@ -1,6 +1,6 @@
 let allMessages = [];
 
-
+document.addEventListener("DOMContentLoaded", () => {
     const currentChat = localStorage.getItem("currentChat");
     getAllMessages().then(() => {
         if (currentChat) {
@@ -22,6 +22,7 @@ function getAllMessages() {
         ]
     };
 
+    return fetch(`${MESSAGES_URL}?q=${encodeURIComponent(JSON.stringify(query))}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -45,7 +46,7 @@ function loadContacts() {
 
     const contacts = allMessages.reduce((acc, message) => {
         const contactId = message.from[0]._id === from ? message.to[0]._id : message.from[0]._id;
-
+        if (!acc[contactId] || new Date(message.sent) > new Date(acc[contactId].sent)) {
             acc[contactId] = message;
         }
         return acc;
@@ -92,7 +93,6 @@ function loadChat(contact) {
     const ACCOUNTS_URL = "https://mokesell-2304.restdb.io/rest/accounts";
     const LISTINGS_URL = "https://mokesell-2304.restdb.io/rest/listings";
     const OFFERS_URL = "https://mokesell-2304.restdb.io/rest/offers";
-
     const from = localStorage.getItem("loginId");
     const to = contact;
     
@@ -128,7 +128,8 @@ function loadChat(contact) {
             
             if (message.offer) {
                 const offerCard = document.createElement('div');
-
+                offerCard.classList.add('offer-card');
+                offerCard.style.width = '100%';
                 chatContainer.appendChild(offerCard);
 
                 fetch(`${LISTINGS_URL}/${message.offer[0].listing[0]}`, {
@@ -140,12 +141,14 @@ function loadChat(contact) {
                 })
                 .then((response) => response.json())
                 .then((listing) => {
-
+                    offerCard.innerHTML = `
                         <img src="/src/images/${listing.image}" alt="${listing.title}" class="offer-image" />
                         <div class="offer-details">
                             <h4>${listing.title}</h4>
                             <p>Offer Price: S$${message.offer[0].price}</p>
-
+                        </div>
+                    `;
+                    
                     const offerStatus = document.createElement('div');
                     offerStatus.classList.add('offer-status');
                     offerCard.appendChild(offerStatus);
@@ -180,7 +183,6 @@ function loadChat(contact) {
                                     .catch((error) => {
                                         console.error("Error updating listing quantity:", error);
                                     });
-
                                 })
                                 .catch((error) => {
                                     console.error("Error accepting offer:", error);

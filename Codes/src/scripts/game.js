@@ -72,6 +72,40 @@ function checkWin() {
     }
 }
 
+function showAnimation() {
+    const overlay = document.createElement('div');
+    overlay.className = 'animation-overlay';
+    overlay.innerHTML = `
+        <dotlottie-player src="https://lottie.host/ad3b2cf2-5349-4f6e-83cc-99b882fab7de/MVP830YOHZ.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+    `;
+    document.body.appendChild(overlay);
+    setTimeout(() => {
+        document.body.removeChild(overlay);
+    }, 3000); // Remove after 3 seconds
+}
+
+function handleGameEnd(won) {
+    gameActive = false;
+    localStorage.setItem('lastPlayed', Date.now());
+    if (won) {
+        console.log('Congratulations! You won!');
+        points += lives * 50;
+        showAnimation();
+        setTimeout(() => {
+            alert(`You won! Points: ${points}`);
+            addPointsToUser(points);
+        }, 3000); // Show alert after animation
+    } else {
+        alert(`Game Over! Points: ${points}`);
+        addPointsToUser(points);
+    }
+    setTimeout(updateTimer, 1000);
+}
+
+function updateDisplay() {
+    pointsDisplay.textContent = points;
+    livesDisplay.textContent = lives;
+}
 
 function updateTimer() {
     const lastPlayed = localStorage.getItem('lastPlayed');
@@ -123,4 +157,4 @@ function addPointsToUser(pointsToAdd) {
 // Initialize the game
 initializeGame();
 updateDisplay();
-
+if (!gameActive) updateTimer();
