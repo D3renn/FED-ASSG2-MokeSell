@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const createListingButton = document.querySelector("#createListingBtn");
 
     createListingButton.addEventListener("click", () => {
-        window.location.href = "/listing/create";
+
     });
 
     fetchUserListings();

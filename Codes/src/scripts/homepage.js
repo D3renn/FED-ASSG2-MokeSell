@@ -55,45 +55,7 @@ function fetchListings() {
     .then((response) => response.json())
     .then((data) => {
         if (data.length === 0) {
-            const productList = document.getElementById("product-list");
-            productList.innerHTML = '<p>No listings available.</p>';
-        } else {
-            data.forEach((listing) => {
-                if (listing.categories) {
-                    listing.categories.forEach((category) => {
-                        const categoryName = category.categoryName.toLowerCase();
-                        let categorySection = document.querySelector(`.product-section[data-category="${categoryName}"]`);
-                        
-                        if (!categorySection) {
-                            categorySection = document.createElement('div');
-                            categorySection.classList.add('product-section');
-                            categorySection.setAttribute('data-category', categoryName);
-                            categorySection.innerHTML = `
-                                <div class="section-header">
-                                    <h2>${category.categoryName}</h2>
-                                    <button class="view-all" onclick="redirectToCategory('${category._id}')">View All</button>
-                                </div>
-                                <div class="product-scroll" id="${categoryName}-list"></div>
-                            `;
-                            document.getElementById("product-list").appendChild(categorySection);
-                        }
-    
-                        const categoryList = document.getElementById(`${categoryName}-list`);
-                        categoryList.innerHTML = ''; // Clear the loading text
-                        const listingCard = `
-                            <div class="product-card" onclick="viewListing('${listing._id}')">
-                                <img src="/src/images/${listing.image}" alt="${listing.title}">
-                                <h3>${listing.title}</h3>
-                                <p>${listing.description}</p>
-                                <p>$${listing.price}</p>
-                            </div>
-                        `;
-                        categoryList.insertAdjacentHTML('beforeend', listingCard);
-                    });
-                }
-                
-            });
-        }
+
     })
     .catch((error) => {
         console.error("Error fetching listings:", error);

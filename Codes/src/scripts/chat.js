@@ -1,8 +1,5 @@
 let allMessages = [];
 
-document.addEventListener("DOMContentLoaded", async () => {
-    const { checkUserLoggedIn } = await import('./utils.js');
-    checkUserLoggedIn(); // Check if the user is logged in
 
     const currentChat = localStorage.getItem("currentChat");
     getAllMessages().then(() => {
@@ -25,7 +22,6 @@ function getAllMessages() {
         ]
     };
 
-    return fetch(`${MESSAGES_URL}?q=${encodeURIComponent(JSON.stringify(query))}&h={"$orderby": {"_created": 1}}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -49,7 +45,7 @@ function loadContacts() {
 
     const contacts = allMessages.reduce((acc, message) => {
         const contactId = message.from[0]._id === from ? message.to[0]._id : message.from[0]._id;
-        if (!acc[contactId] || new Date(message._created) > new Date(acc[contactId]._created)) {
+
             acc[contactId] = message;
         }
         return acc;
@@ -96,7 +92,7 @@ function loadChat(contact) {
     const ACCOUNTS_URL = "https://mokesell-2304.restdb.io/rest/accounts";
     const LISTINGS_URL = "https://mokesell-2304.restdb.io/rest/listings";
     const OFFERS_URL = "https://mokesell-2304.restdb.io/rest/offers";
-    const COUPONS_URL = "https://mokesell-2304.restdb.io/rest/coupons";
+
     const from = localStorage.getItem("loginId");
     const to = contact;
     
@@ -132,7 +128,7 @@ function loadChat(contact) {
             
             if (message.offer) {
                 const offerCard = document.createElement('div');
-                offerCard.classList.add('offer-card', message.from[0]._id === from ? 'sent' : 'received');
+
                 chatContainer.appendChild(offerCard);
 
                 fetch(`${LISTINGS_URL}/${message.offer[0].listing[0]}`, {
@@ -144,36 +140,11 @@ function loadChat(contact) {
                 })
                 .then((response) => response.json())
                 .then((listing) => {
-                    let offerDetailsHTML = `
+
                         <img src="/src/images/${listing.image}" alt="${listing.title}" class="offer-image" />
                         <div class="offer-details">
                             <h4>${listing.title}</h4>
                             <p>Offer Price: S$${message.offer[0].price}</p>
-                    `;
-
-                    if (message.offer[0].coupon && message.from[0]._id === from) {
-                        fetch(`${COUPONS_URL}/${message.offer[0].coupon[0]}`, {
-                            method: "GET",
-                            headers: {
-                                "Content-Type": "application/json",
-                                "x-apikey": APIKEY,
-                            },
-                        })
-                        .then((response) => response.json())
-                        .then((coupon) => {
-                            const deductedPrice = message.offer[0].price - coupon.amount;
-                            offerDetailsHTML += `
-                                <p>Original Offer Price: <s>S$${message.offer[0].price}</s></p>
-                                <p>Discounted Price: S$${deductedPrice}</p>
-                            `;
-                            offerCard.innerHTML = offerDetailsHTML + '</div>';
-                        })
-                        .catch((error) => {
-                            console.error("Error fetching coupon:", error);
-                        });
-                    } else {
-                        offerCard.innerHTML = offerDetailsHTML + '</div>';
-                    }
 
                     const offerStatus = document.createElement('div');
                     offerStatus.classList.add('offer-status');
@@ -210,20 +181,6 @@ function loadChat(contact) {
                                         console.error("Error updating listing quantity:", error);
                                     });
 
-                                    // Mark the coupon as used
-                                    if (message.offer[0].coupon) {
-                                        fetch(`${COUPONS_URL}/${message.offer[0].coupon[0]}`, {
-                                            method: "PATCH",
-                                            headers: {
-                                                "Content-Type": "application/json",
-                                                "x-apikey": APIKEY,
-                                            },
-                                            body: JSON.stringify({ used: true })
-                                        })
-                                        .catch((error) => {
-                                            console.error("Error marking coupon as used:", error);
-                                        });
-                                    }
                                 })
                                 .catch((error) => {
                                     console.error("Error accepting offer:", error);

@@ -1,38 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".filter-button");
-    const sections = document.querySelectorAll(".product-section");
-    
-    // Function to filter sections
-    function filterCategory(category) {
-        sections.forEach((section) => {
-            if (
-                category === "all" ||
-                section.getAttribute("data-category") === category
-            ) {
-                section.classList.add("show");
-            } else {
-                section.classList.remove("show");
-            }
-        });
-    }
-    
-    // Event listeners for buttons
-    buttons.forEach((button) => {
-        button.addEventListener("click", function () {
-            // Remove active class from all buttons
-            buttons.forEach((btn) => btn.classList.remove("active"));
-            this.classList.add("active");
-            
-            // Get category and filter
-            const category = this.getAttribute("data-category");
-            filterCategory(category);
-        });
-    });
-    
-    // Show all by default
-    filterCategory("all");
-    setupSearch();
-});
 
 function setupSearch() {
     const searchBar = document.querySelector(".search-bar");
@@ -57,23 +22,37 @@ function setupSearch() {
     });
 }
 
-function routeGame() {
-    window.location.href = "/game";
+let currentPage = 1;
+const slider = document.querySelector('.advertisement-slider');
+const dots = document.querySelectorAll('.dot');
+
+function slideAdvertisements() {
+    if (currentPage === 1) {
+        slider.style.transform = 'translateX(-50%)';
+        currentPage = 2;
+    } else {
+        slider.style.transform = 'translateX(0%)';
+        currentPage = 1;
+    }
+    updateDots();
 }
 
-function routeHome() {
-    window.location.href = "/";
+function updateDots() {
+    dots.forEach((dot, index) => {
+        if (index + 1 === currentPage) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
 }
 
-function routeProfile() {
-    window.location.href = "/profile";
-}
-
-function routeListing() {
-    window.location.href = "/listing";
-}
-
-function routeChat() {
-    window.location.href = "/chat";
-}
-
+dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+        const page = parseInt(dot.getAttribute('data-page'));
+        if (page !== currentPage) {
+            currentPage = page;
+            slider.style.transform = `translateX(${-(page - 1) * 50}%)`;
+            updateDots();
+        }
+    });

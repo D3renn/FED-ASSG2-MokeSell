@@ -72,22 +72,6 @@ function checkWin() {
     }
 }
 
-function handleGameEnd(won) {
-    gameActive = false;
-    localStorage.setItem('lastPlayed', Date.now());
-    if (won) {
-        console.log('Congratulations! You won!');
-        points += lives * 50;
-    }
-    alert(won ? `You won! Points: ${points}` : `Game Over! Points: ${points}`);
-    addPointsToUser(points);
-    setTimeout(updateTimer, 1000);
-}
-
-function updateDisplay() {
-    pointsDisplay.textContent = points;
-    livesDisplay.textContent = lives;
-}
 
 function updateTimer() {
     const lastPlayed = localStorage.getItem('lastPlayed');
@@ -139,4 +123,4 @@ function addPointsToUser(pointsToAdd) {
 // Initialize the game
 initializeGame();
 updateDisplay();
-if (!gameActive) updateTimer();
+

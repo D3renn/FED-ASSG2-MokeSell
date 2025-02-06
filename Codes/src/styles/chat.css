@@ -183,19 +183,7 @@
 .offer-card {
   display: flex;
   align-items: center;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
-  background-color: white; /* Set background color to white */
-}
 
-.offer-card.sent {
-  align-self: flex-end;
-}
-
-.offer-card.received {
-  align-self: flex-start;
 }
 
 .offer-image {
@@ -221,7 +209,7 @@
 }
 
 .offer-status {
-  margin-left: 20px;
+
   margin-top: 10px;
 }
 

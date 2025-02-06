@@ -32,4 +32,4 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error creating account:", error);
         });
     });
-});
+

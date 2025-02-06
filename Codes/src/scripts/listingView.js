@@ -1,7 +1,3 @@
-import { checkUserLoggedIn } from './utils.js';
-
-document.addEventListener("DOMContentLoaded", () => {
-    checkUserLoggedIn(); // Check if the user is logged in
 
     const APIKEY = "678a13b229bb6d4dd6c56bd2";
     const BASE_URL = "https://mokesell-2304.restdb.io/rest/listings";
