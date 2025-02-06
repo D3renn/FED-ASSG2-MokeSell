@@ -10,12 +10,13 @@
   background-color: #333;
   color: white;
   padding: 20px;
+  text-align: center;
   position: relative;
 }
 
 .logo {
   font-family: 'Black Ops One', sans-serif;
-  font-size: 35px;
+  font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -27,24 +28,10 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
 }
 
 /* Icons & Menu */
- .right-icons {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-}
-
-.icon-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-
-.icon-container button {
+.menu-btn, span.icon {
   background: none;
   border: none;
   color: white;
@@ -52,9 +39,17 @@
   cursor: pointer;
 }
 
-.icon-container span {
-  font-size: 15px;
+.left-icons, .right-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.right-icons button {
+  background: none;
+  border: none;
   color: white;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 /* Search Bar */
@@ -65,7 +60,6 @@
   padding: 5px;
   border-radius: 20px;
   overflow: hidden;
-  width: 300px;
 }
 
 .search-bar {
@@ -80,6 +74,7 @@
   border: none;
   padding: 5px;
   cursor: pointer;
+  
 }
 
 /* Categories Section */
@@ -179,12 +174,13 @@
   align-items: center;
   margin: 20px;
   margin-left: 6rem;
+  margin-top: 0;
 }
 
 .section-header h2 {
   font-size: 2rem;
   font-weight: bold;
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
   font: 800 45px / 1.05 "futura-pt-bold", sans-serif;
   color: #000;
   margin-bottom:0px;
@@ -206,7 +202,7 @@
 
 .product-section {
   /* display: none; */
-  margin: 20px 0;
+
   padding: 15px;
   border-radius: 5px;
 }
@@ -282,72 +278,3 @@
   display: block;
 }
 
-.advertisement-container {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  height: 165px; /* Adjust height as needed */
-  background-color: #ffff;
-}
-
-/* Advertisement Slider */
-.advertisement-container {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  background: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.advertisement-slider {
-  position: relative;
-  width: 100%;
-}
-
-.ad-page {
-  display: none;
-  text-align: center;
-  padding: 20px;
-}
-
-.ad-page.active {
-  display: block;
-}
-
-.lottie-animation {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 20px;
-}
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 16px;
-  color: #555;
-}
-
-.navigation-dots {
-  text-align: center;
-  padding: 10px 0;
-}
-
-.dot {
-  height: 15px;
-  width: 15px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.dot.active {
-  background-color: #717171;
-}

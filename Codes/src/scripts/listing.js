@@ -10,35 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const createListingButton = document.querySelector("#createListingBtn");
 
     createListingButton.addEventListener("click", () => {
-        const sellerID = localStorage.getItem("loginId");
-        const listingData = {
-            sellerID: sellerID,
-            title: "Title of Item",
-            description: "Description of Item",
-            price: 0,
-            quantity: 1,
-            condition: "New", // Default placeholder value
-            brand: "Brand Name", // Default placeholder value
-            dealMethod: "Meet-up or Delivery", // Default placeholder value
-        };
 
-        fetch(BASE_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "x-apikey": APIKEY,
-            },
-            body: JSON.stringify(listingData),
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log("Listing created successfully:", data);
-            localStorage.setItem("editListingId", data._id);
-            window.location.href = `/listing/edit`;
-        })
-        .catch((error) => {
-            console.error("Error creating listing:", error);
-        });
     });
 
     fetchUserListings();

@@ -183,12 +183,7 @@
 .offer-card {
   display: flex;
   align-items: center;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  margin-bottom: 10px;
-  width: 100%;
+
 }
 
 .offer-image {
@@ -214,6 +209,7 @@
 }
 
 .offer-status {
+
   margin-top: 10px;
 }
 

@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+
     const APIKEY = "678a13b229bb6d4dd6c56bd2";
     const BASE_URL = "https://mokesell-2304.restdb.io/rest/listings";
     const OFFERS_URL = "https://mokesell-2304.restdb.io/rest/offers";
