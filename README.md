@@ -16,6 +16,7 @@ Low-Fidelity: https://www.figma.com/design/hzCVwT6e0nmLjH3R9i55is/FED-Checkpoint
 ## Features
 
 Feature 1: Chat
+This feature allows the user to chat with the seller for more information about the item.
 
 Feature 2: Categories Filter
 
@@ -44,9 +45,15 @@ Feature 12: Offer
 - Reverse Image Search
 
 ## Technologies Used
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
- 
+- [HTML]
+    - The project uses **HTML** to be a standard markup language for documents designed to be displayed in a web browser.
+- [CSS]
+    - The project uses **CSS** to show how HTML elements are to be displayed on screen, paper, or in other media
+- [JavaScript]
+    - The project uses **JavaScript** to represent the programming language of the web.
+- [RestDB]
+    - The project uses **RESTDB** to be a database to store information that can be accessed.
+  
 ## Credits
 
 ### Reference
