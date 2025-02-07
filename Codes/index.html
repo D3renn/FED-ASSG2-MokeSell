@@ -111,10 +111,44 @@
   </nav>
 
 
-
+    <!-- Filter Buttons -->
+    <div class="filter-bar">
+      <nav class="filter">
+          <button class="filter-button active" data-category="all">All</button>
+          <button class="filter-button" data-category="featured">Featured</button>
+          <button class="filter-button" data-category="certified users">Certified Users</button>
+          <button class="filter-button" data-category="slashed prices">Slashed Prices</button>
+          <button class="filter-button" data-category="brand new">Brand New</button>
+      </nav>
+  </div>
   <!-- Product Sections -->
   <div class="product-list" id="product-list">
-    <p>Loading product sections...</p>
+    <!-- Product Sections -->
+    <div class="product-list" id="product-list">
+      <div class="product-section show">
+          <div class="section-header">
+              <h2>Category Name</h2>
+              <button class="view-all" onclick="redirectToCategory('categoryId')">View All</button>
+          </div>
+          <div class="product-scroll">
+              <div class="product-card">
+                  <img src="/src/images/product1.jpg" alt="Product 1">
+                  <h3>Product 1</h3>
+                  <p>Description of Product 1</p>
+              </div>
+              <div class="product-card">
+                  <img src="/src/images/product2.jpg" alt="Product 2">
+                  <h3>Product 2</h3>
+                  <p>Description of Product 2</p>
+              </div>
+              <div class="product-card">
+                  <img src="/src/images/product3.jpg" alt="Product 3">
+                  <h3>Product 3</h3>
+                  <p>Description of Product 3</p>
+    
+          </div>
+      </div>
+  </div>
   </div>
 
   <script src="/src/scripts/script.js"></script>
