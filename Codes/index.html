@@ -56,30 +56,30 @@
   <!-- Advertisement Section -->
   <div class="advertisement-container">
     <div class="advertisement-slider">
-        <!-- First Advertisement: Game Advertisement -->
-        <div class="ad-page page1">
-            <div id="game-lottie" class="lottie-animation"></div>
-            <h2>Play the Ultimate Game!</h2>
-            <p>Experience the thrill of our new action-packed game. Download now!</p>
-            <button class="btn btn" onclick="routeGame()">Play Now</button>
-        </div>
+      <!-- First Advertisement: Game Advertisement -->
+      <div class="ad-page page1">
+        <div id="game-lottie" class="lottie-animation"></div>
+        <h2>Play the Ultimate Game!</h2>
+        <p>Experience the thrill of our new action-packed game. Download now!</p>
+        <button class="btn btn" onclick="routeGame()">Play Now</button>
+      </div>
 
-        <!-- Second Advertisement: Add Listing Advertisement -->
-        <div class="ad-page page2">
-            <div id="listing-lottie" class="lottie-animation"></div>
-            <h2>List Your Rreloved Today!</h2>
-            <p>Find buyers quickly by listing your items on our platform. Dont Wait ah!</p>
-            <button class="btn btn" onclick="routeListing()">List Now</button>
-        </div>
+      <!-- Second Advertisement: Add Listing Advertisement -->
+      <div class="ad-page page2">
+        <div id="listing-lottie" class="lottie-animation"></div>
+        <h2>List Your Rreloved Today!</h2>
+        <p>Find buyers quickly by listing your items on our platform. Dont Wait ah!</p>
+        <button class="btn btn" onclick="routeListing()">List Now</button>
+      </div>
     </div>
-    
+
     <!-- Navigation Dots -->
     <!-- Navigation Dots -->
     <div class="navigation-dots">
       <span class="dot active" data-page="1"></span>
       <span class="dot" data-page="2"></span>
+    </div>
   </div>
-</div>
 
   <!-- Categories Section -->
   <nav class="categories">
@@ -113,83 +113,78 @@
   </nav>
 
 
-    <!-- Filter Buttons -->
-    <div class="filter-bar">
-      <nav class="filter">
-          <button class="filter-button active" data-category="all">All</button>
-          <button class="filter-button" data-category="featured">Featured</button>
-          <button class="filter-button" data-category="certified users">Certified Users</button>
-          <button class="filter-button" data-category="slashed prices">Slashed Prices</button>
-          <button class="filter-button" data-category="brand new">Brand New</button>
-      </nav>
+  <!-- Filter Buttons -->
+  <div class="filter-bar">
+    <nav class="filter">
+      <button class="filter-button active" data-category="all">All</button>
+      <button class="filter-button" data-category="featured">Featured</button>
+      <button class="filter-button" data-category="certified users">Certified Users</button>
+      <button class="filter-button" data-category="slashed prices">Slashed Prices</button>
+      <button class="filter-button" data-category="brand new">Brand New</button>
+    </nav>
   </div>
   <!-- Product Sections -->
   <div class="product-list" id="product-list">
     <!-- Product Sections -->
     <div class="product-list" id="product-list">
       <div class="product-section show">
-          <div class="section-header">
-              <h2>Category Name</h2>
-              <button class="view-all" onclick="redirectToCategory('categoryId')">View All</button>
+        <div class="section-header">
+          <h2>Category Name</h2>
+          <button class="view-all" onclick="redirectToCategory('categoryId')">View All</button>
+        </div>
+        <div class="product-scroll">
+          <div class="product-card">
+            <img src="/src/images/product1.jpg" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Description of Product 1</p>
           </div>
-          <div class="product-scroll">
-              <div class="product-card">
-                  <img src="/src/images/product1.jpg" alt="Product 1">
-                  <h3>Product 1</h3>
-                  <p>Description of Product 1</p>
-              </div>
-              <div class="product-card">
-                  <img src="/src/images/product2.jpg" alt="Product 2">
-                  <h3>Product 2</h3>
-                  <p>Description of Product 2</p>
-              </div>
-              <div class="product-card">
-                  <img src="/src/images/product3.jpg" alt="Product 3">
-                  <h3>Product 3</h3>
-                  <p>Description of Product 3</p>
-    
+          <div class="product-card">
+            <img src="/src/images/product2.jpg" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Description of Product 2</p>
           </div>
+          <div class="product-card">
+            <img src="/src/images/product3.jpg" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>Description of Product 3</p>
+
+          </div>
+        </div>
       </div>
-  </div>
-  </div>
+    </div>
 
-  <!-- Counters Section -->
-  <div class="counters-section">
-    <div class="counter">
-      <h2 id="active-users">0</h2>
-      <p>Active Users</p>
+    <!-- Counters Section -->
+    <div class="counters-section">
+      <div class="counter">
+        <h2 id="active-users">0</h2>
+        <p class="user">Active Users</p>
+      </div>
+      <div class="counter">
+        <h2 id="transactions">0</h2>
+        <p>Completed Transactions</p>
+      </div>
+      <div class="counter">
+        <h2 id="countries">0</h2>
+        <p>Countries</p>
+      </div>
     </div>
-    <div class="counter">
-      <h2 id="transactions">0</h2>
-      <p>Completed Transactions</p>
-    </div>
-    <div class="counter">
-      <h2 id="countries">0</h2>
-      <p>Countries</p>
-    </div>
-  </div>
 
-  <!-- Footer Seection -->
-  <footer class="footer">
-    <h2 class="footer-header">Come Visit Us!</h2>
-    <div class="footer-map">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.23726090476!2d103.84014516137069!3d1.2885963815488588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da190a00eaf425%3A0xcdadedb823d40d93!2sSingapore%20178880!5e0!3m2!1sen!2ssg!4v1732612550308!5m2!1sen!2ssg"
-            width="600"
-            height="450"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
+    <!-- Footer Section -->
+    <footer class="footer">
+      <h2 class="footer-header">Come Visit Us!</h2>
+      <div class="footer-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.23726090476!2d103.84014516137069!3d1.2885963815488588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da190a00eaf425%3A0xcdadedb823d40d93!2sSingapore%20178880!5e0!3m2!1sen!2ssg!4v1732612550308!5m2!1sen!2ssg"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
         </iframe>
-    </div>
-    <div class="footer-content">
+      </div>
+      <div class="footer-content">
         <div class="footer-address">
-            <p>XYZ ROAD</p>
-            <p>UNIT NO.</p>
-            <p>POSTAL CODE</p>
-            <p>OPERATING HRS</p>
-            <a href="https://wa.me/6596505964" target="_blank">+65 9650 5964</a>
+          <p>St. Patricks Road</p>
+          <p>178880</p>
+          <p>Operating Hours: 0900 - 2200</p>
+          <a href="https://wa.me/6596505964" target="_blank">+65 9650 5964</a>
         </div>
 
         <div class="footer-bring-to-top">
@@ -197,34 +192,34 @@
         </div>
 
         <div class="footer-socials">
-            <div class="social">
-                <div class="social-icon">
-                    <img src="/src/Images/instagram_icon_new.jpg">
-                </div>
-                <a href="https://instagram.com" class="social-link">Instagram</a>
+          <div class="social">
+            <div class="social-icon">
+              <img src="/src/Images/instagram_icon_new.jpg">
             </div>
-            <div class="social">
-                <div class="social-icon">
-                    <img src="/src/Images/tiktok_icon.png">                    
-                </div>
-                <a href="https://TikTok.com" class="social-link">TikTok</a>
+            <a href="https://instagram.com" class="social-link">Instagram</a>
+          </div>
+          <div class="social">
+            <div class="social-icon">
+              <img src="/src/Images/tiktok_icon.png">
             </div>
-            <div class="social">
-                <div class="social-icon">
-                    <img src="/src/Images/youtube_icon.png">
-                </div>
-                <a href="https://Youtube.com" class="social-link">YouTube</a>
+            <a href="https://TikTok.com" class="social-link">TikTok</a>
+          </div>
+          <div class="social">
+            <div class="social-icon">
+              <img src="/src/Images/youtube_icon.png">
             </div>
+            <a href="https://Youtube.com" class="social-link">YouTube</a>
+          </div>
         </div>
-    </div>
-  </footer>
+      </div>
+    </footer>
 
 
-  <script src="/src/scripts/footer.js"></script>
-  <script src="/src/scripts/counter.js"></script>
-  <script src="/src/scripts/script.js"></script>
-  <script src="/src/scripts/homepage.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+    <script src="/src/scripts/footer.js"></script>
+    <script src="/src/scripts/counter.js"></script>
+    <script src="/src/scripts/script.js"></script>
+    <script src="/src/scripts/homepage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
 </body>
 
 </html>
