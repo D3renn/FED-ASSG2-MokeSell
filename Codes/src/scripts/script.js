@@ -60,23 +60,6 @@ dots.forEach(dot => {
 
 setInterval(slideAdvertisements, 5000); // Change page every 5 seconds
 
-    // Initialize Lottie for the Game Advertisement
-    var gameAnimation = lottie.loadAnimation({
-        container: document.getElementById('game-lottie'), // the dom element
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'https://assets3.lottiefiles.com/packages/lf20_4bqydb9x.json' // Gaming Lottie animation
-    });
-
-    // Initialize Lottie for the Add Listing Advertisement
-    var listingAnimation = lottie.loadAnimation({
-        container: document.getElementById('listing-lottie'), // the dom element
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'https://assets3.lottiefiles.com/packages/lf20_qw6cnyjy.json' // Property Listing Lottie animation
-    });
 
 function routeGame() {
     window.location.href = "/game";

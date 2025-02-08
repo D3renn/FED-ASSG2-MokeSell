@@ -415,57 +415,74 @@ html {
   background-color: #111; /* Slightly lighter */
 }
 
-.advertisement-container {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  height: 165px; /* Adjust height as needed */
-  background-color: #ffff;
-}
-
-/* Advertisement Slider */
+/* Advertisement Container */
 .advertisement-container {
   position: relative;
   width: 100%;
   max-width: 800px;
-  margin: 0 auto;
-  background: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  background: rgb(185, 82, 82);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   overflow: hidden;
+  height: auto; /* Adjust height dynamically based on content */
 }
 
+/* Advertisement Slider */
 .advertisement-slider {
   position: relative;
-  width: 100%;
+  width: 200%; /* For sliding functionality */
+  display: flex; /* Align slides using flexbox */
 }
 
 .ad-page {
-  display: none;
+  width: 50%; /* Each slide takes up half of the slider's width */
+  display: none; /* Hide inactive slides */
   text-align: center;
   padding: 20px;
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .ad-page.active {
-  display: block;
+  display: block; /* Show only the active slide */
 }
 
-.lottie-animation {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 20px;
+/* Lottie Animation Styling */
+dotlottie-player {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 20px; /* Center horizontally */
+  display: block; /* Ensure it behaves as a block element */
 }
 
-h2 {
+/* Advertisement Text */
+.ad-page h2 {
   font-size: 24px;
   margin-bottom: 10px;
 }
 
-p {
+.ad-page p {
   font-size: 16px;
   color: #555;
+  margin-bottom: 15px;
 }
 
+/* Advertisement Button */
+.ad-page .btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ad-page .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Navigation Dots */
 .navigation-dots {
   text-align: center;
   padding: 10px 0;
