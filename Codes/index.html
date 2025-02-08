@@ -49,43 +49,34 @@
     </div>
   </header>
 
-<!-- Advertisement Section -->
-<div class="advertisement-container">
-  <div class="advertisement-slider">
-    <!-- First Advertisement: Game Advertisement -->
-    <div class="ad-page page1 active">
-      <dotlottie-player 
-        src="https://lottie.host/0c7f7d93-fbf0-4e85-bd14-482fe18ec52d/qIhNAmN8r3.lottie" 
-        background="transparent" 
-        speed="1" 
-        style="width: 300px; height: 300px;" 
-        loop 
-        autoplay>
-      </dotlottie-player>
-      <h2>Play the Ultimate Game!</h2>
-      <p>Experience the thrill of our new action-packed game. Download now!</p>
-      <button class="btn btn" onclick="routeGame()">Play Now</button>
+  <!-- Advertisement Section -->
+  <div class="advertisement-container">
+    <div class="advertisement-slider">
+      <!-- First Advertisement: Game Advertisement -->
+      <div class="ad-page page1 active">
+        <dotlottie-player src="https://lottie.host/0c7f7d93-fbf0-4e85-bd14-482fe18ec52d/qIhNAmN8r3.lottie"
+          background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay>
+        </dotlottie-player>
+        <h2>Play the Ultimate Game!</h2>
+        <p>Experience the thrill of our new action-packed game. Download now!</p>
+        <button class="btn btn" onclick="routeGame()">Play Now</button>
+      </div>
+      <!-- Second Advertisement: Add Listing Advertisement -->
+      <div class="ad-page page2 active">
+        <dotlottie-player src="https://lottie.host/174dbcb2-1912-4041-a6ed-9ff4d0446480/nuSy9x8CEn.lottie"
+          background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay>
+        </dotlottie-player>
+        <h2>List Your Preloved Today!</h2>
+        <p>Find buyers quickly by listing your items on our platform. Don't Wait ah!</p>
+        <button class="btn btn" onclick="routeListing()">List Now</button>
+      </div>
     </div>
-    <!-- Second Advertisement: Add Listing Advertisement -->
-    <div class="ad-page page2 active">
-      <dotlottie-player 
-        src="https://lottie.host/174dbcb2-1912-4041-a6ed-9ff4d0446480/nuSy9x8CEn.lottie" 
-        background="transparent" 
-        speed="1" 
-        style="width: 300px; height: 300px;" 
-        loop 
-        autoplay>
-      </dotlottie-player>
-      <h2>List Your Reloved Today!</h2>
-      <p>Find buyers quickly by listing your items on our platform. Don't Wait ah!</p>
-      <button class="btn btn" onclick="routeListing()">List Now</button>
-    </div>
-  </div>
 
-  <!-- Navigation Dots -->
-  <div class="navigation-dots">
-    <span class="dot active" data-page="1"></span>
-    <span class="dot" data-page="2"></span>
+    <!-- Navigation Dots -->
+    <div class="navigation-dots">
+      <span class="dot active" data-page="1"></span>
+      <span class="dot" data-page="2"></span>
+    </div>
   </div>
 
   <!-- Categories Section -->
@@ -175,59 +166,60 @@
         <p>Countries</p>
       </div>
     </div>
+  </div>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-      <h2 class="footer-header">Come Visit Us!</h2>
-      <div class="footer-map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.23726090476!2d103.84014516137069!3d1.2885963815488588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da190a00eaf425%3A0xcdadedb823d40d93!2sSingapore%20178880!5e0!3m2!1sen!2ssg!4v1732612550308!5m2!1sen!2ssg"
-          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+  <!-- Footer Section -->
+  <footer class="footer">
+    <h2 class="footer-header">Come Visit Us!</h2>
+    <div class="footer-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.23726090476!2d103.84014516137069!3d1.2885963815488588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da190a00eaf425%3A0xcdadedb823d40d93!2sSingapore%20178880!5e0!3m2!1sen!2ssg!4v1732612550308!5m2!1sen!2ssg"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <div class="footer-content">
+      <div class="footer-address">
+        <p>St. Patricks Road</p>
+        <p>178880</p>
+        <p>Operating Hours: 0900 - 2200</p>
+        <a href="https://wa.me/6596505964" target="_blank">+65 9650 5964</a>
       </div>
-      <div class="footer-content">
-        <div class="footer-address">
-          <p>St. Patricks Road</p>
-          <p>178880</p>
-          <p>Operating Hours: 0900 - 2200</p>
-          <a href="https://wa.me/6596505964" target="_blank">+65 9650 5964</a>
-        </div>
 
-        <div class="footer-bring-to-top">
-          <button class="to-top-btn" id="toTopBtn">⇧ Bring To Top ⇧</button>
-        </div>
+      <div class="footer-bring-to-top">
+        <button class="to-top-btn" id="toTopBtn">⇧ Bring To Top ⇧</button>
+      </div>
 
-        <div class="footer-socials">
-          <div class="social">
-            <div class="social-icon">
-              <img src="/src/Images/instagram_icon_new.jpg">
-            </div>
-            <a href="https://instagram.com" class="social-link">Instagram</a>
+      <div class="footer-socials">
+        <div class="social">
+          <div class="social-icon">
+            <img src="/src/Images/instagram_icon_new.jpg">
           </div>
-          <div class="social">
-            <div class="social-icon">
-              <img src="/src/Images/tiktok_icon.png">
-            </div>
-            <a href="https://TikTok.com" class="social-link">TikTok</a>
+          <a href="https://instagram.com" class="social-link">Instagram</a>
+        </div>
+        <div class="social">
+          <div class="social-icon">
+            <img src="/src/Images/tiktok_icon.png">
           </div>
-          <div class="social">
-            <div class="social-icon">
-              <img src="/src/Images/youtube_icon.png">
-            </div>
-            <a href="https://Youtube.com" class="social-link">YouTube</a>
+          <a href="https://TikTok.com" class="social-link">TikTok</a>
+        </div>
+        <div class="social">
+          <div class="social-icon">
+            <img src="/src/Images/youtube_icon.png">
           </div>
+          <a href="https://Youtube.com" class="social-link">YouTube</a>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-	<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 
-    <script src="/src/scripts/footer.js"></script>
-    <script src="/src/scripts/counter.js"></script>
-    <script src="/src/scripts/script.js"></script>
-    <script src="/src/scripts/homepage.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+  <script src="/src/scripts/footer.js"></script>
+  <script src="/src/scripts/counter.js"></script>
+  <script src="/src/scripts/script.js"></script>
+  <script src="/src/scripts/homepage.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
 </body>
 
 </html>
