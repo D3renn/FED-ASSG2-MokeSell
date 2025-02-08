@@ -22,7 +22,7 @@
 <body>
   <header class="header">
     <div class="top-bar">
-      <h1 class="logo">MokeSell</h1>
+      <h1 class="logo" onclick="routeHome()" style="cursor: pointer;">MokeSell</h1>
       <div class="search-container">
         <button class="search-icon"><i class="fas fa-search"></i></button>
         <input type="text" class="search-bar" placeholder="Search Here...">
@@ -32,10 +32,6 @@
         <div class="icon-container">
           <button class="icon-btn" onclick="routeChat()"><i class="fas fa-comments"></i></button>
           <span>Chat</span>
-        </div>
-        <div class="icon-container">
-          <button class="icon-btn"><i class="fas fa-home"></i></button>
-          <span>Home</span>
         </div>
         <div class="icon-container">
           <button class="icon-btn" onclick="routeGame()"><i class="fas fa-gamepad"></i></button>
@@ -67,7 +63,7 @@
       <!-- Second Advertisement: Add Listing Advertisement -->
       <div class="ad-page page2">
         <div id="listing-lottie" class="lottie-animation"></div>
-        <h2>List Your Rreloved Today!</h2>
+        <h2>List Your Preloved Items Today!</h2>
         <p>Find buyers quickly by listing your items on our platform. Dont Wait ah!</p>
         <button class="btn btn" onclick="routeListing()">List Now</button>
       </div>

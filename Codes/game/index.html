@@ -23,7 +23,7 @@
   <!-- Header Section -->
   <header class="header">
     <div class="top-bar">
-      <h1 class="logo">MokeSell</h1>
+      <h1 class="logo" onclick="routeHome()" style="cursor: pointer;">MokeSell</h1>
       <div class="search-container">
         <button class="search-icon"><i class="fas fa-search"></i></button>
         <input type="text" class="search-bar" placeholder="Search Here...">
@@ -35,10 +35,6 @@
           <span>Chat</span>
         </div>
         <div class="icon-container">
-          <button class="icon-btn" onclick="routeHome()"><i class="fas fa-home"></i></button>
-          <span>Home</span>
-        </div>
-        <div class="icon-container">
           <button class="icon-btn"><i class="fas fa-gamepad"></i></button>
           <span>Game</span>
         </div>
@@ -47,20 +43,21 @@
           <span>Profile</span>
         </div>
         <div class="icon-container">
-          <button class="icon-btn"><i class="fas fa-bars"></i></button>
+          <button class="icon-btn" onclick="routeListing()"><i class="fas fa-bars"></i></button>
           <span>List</span>
         </div>
       </div>
     </div>
   </header>
+
   <div class="game-container">
     <div class="game-header">
-      <div class="lives">Lives: <span id="lives">10</span>/10</div>
-      <div class="points">Points: <span id="points">0</span></div>
-      <div class="timer">Next play: <span id="timer">Ready!</span></div>
+        <div class="lives">Lives: <span id="lives">3</span>/3</div>
+        <div class="points">Points: <span id="points">0</span></div>
+        <div class="timer">Next play: <span id="timer">Ready!</span></div>
     </div>
     <div class="game-board" id="gameBoard"></div>
-  </div>
+</div>
 
     <!-- Footer Section -->
     <footer class="footer">

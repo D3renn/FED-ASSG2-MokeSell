@@ -8,8 +8,11 @@
   }
   
   .footer-header {
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 1em;
+    margin-left: 5em;
+    font-weight: bold;
+    text-align: left;
   }
   
   .footer-map {

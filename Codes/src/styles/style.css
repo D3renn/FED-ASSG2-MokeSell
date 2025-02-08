@@ -29,6 +29,10 @@ html {
   letter-spacing: 2px;
 }
 
+.logo:hover {
+  transform: scale(1.05);
+}
+
 /* Top Bar */
 
 .top-bar {
