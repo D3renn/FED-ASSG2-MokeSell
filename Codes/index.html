@@ -49,32 +49,43 @@
     </div>
   </header>
 
-  <!-- Advertisement Section -->
-  <div class="advertisement-container">
-    <div class="advertisement-slider">
-      <!-- First Advertisement: Game Advertisement -->
-      <div class="ad-page page1">
-        <div id="game-lottie" class="lottie-animation"></div>
-        <h2>Play the Ultimate Game!</h2>
-        <p>Experience the thrill of our new action-packed game. Download now!</p>
-        <button class="btn btn" onclick="routeGame()">Play Now</button>
-      </div>
-
-      <!-- Second Advertisement: Add Listing Advertisement -->
-      <div class="ad-page page2">
-        <div id="listing-lottie" class="lottie-animation"></div>
-        <h2>List Your Preloved Items Today!</h2>
-        <p>Find buyers quickly by listing your items on our platform. Dont Wait ah!</p>
-        <button class="btn btn" onclick="routeListing()">List Now</button>
-      </div>
+<!-- Advertisement Section -->
+<div class="advertisement-container">
+  <div class="advertisement-slider">
+    <!-- First Advertisement: Game Advertisement -->
+    <div class="ad-page page1 active">
+      <dotlottie-player 
+        src="https://lottie.host/0c7f7d93-fbf0-4e85-bd14-482fe18ec52d/qIhNAmN8r3.lottie" 
+        background="transparent" 
+        speed="1" 
+        style="width: 300px; height: 300px;" 
+        loop 
+        autoplay>
+      </dotlottie-player>
+      <h2>Play the Ultimate Game!</h2>
+      <p>Experience the thrill of our new action-packed game. Download now!</p>
+      <button class="btn btn" onclick="routeGame()">Play Now</button>
     </div>
-
-    <!-- Navigation Dots -->
-    <!-- Navigation Dots -->
-    <div class="navigation-dots">
-      <span class="dot active" data-page="1"></span>
-      <span class="dot" data-page="2"></span>
+    <!-- Second Advertisement: Add Listing Advertisement -->
+    <div class="ad-page page2 active">
+      <dotlottie-player 
+        src="https://lottie.host/174dbcb2-1912-4041-a6ed-9ff4d0446480/nuSy9x8CEn.lottie" 
+        background="transparent" 
+        speed="1" 
+        style="width: 300px; height: 300px;" 
+        loop 
+        autoplay>
+      </dotlottie-player>
+      <h2>List Your Reloved Today!</h2>
+      <p>Find buyers quickly by listing your items on our platform. Don't Wait ah!</p>
+      <button class="btn btn" onclick="routeListing()">List Now</button>
     </div>
+  </div>
+
+  <!-- Navigation Dots -->
+  <div class="navigation-dots">
+    <span class="dot active" data-page="1"></span>
+    <span class="dot" data-page="2"></span>
   </div>
 
   <!-- Categories Section -->
@@ -210,6 +221,7 @@
       </div>
     </footer>
 
+	<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 
     <script src="/src/scripts/footer.js"></script>
     <script src="/src/scripts/counter.js"></script>
