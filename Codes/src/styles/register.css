@@ -87,3 +87,20 @@
         font-size: 1.5rem;
     }
 }
+
+/* Login Link Section */
+.loginLink {
+    margin-top: 15px; /* Add spacing above the login link */
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.loginLink a {
+    color: #007bff; /* Bootstrap primary blue */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.loginLink a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
