@@ -114,9 +114,9 @@
     padding: 10px;
     background: #fff;
     border-radius: 10px;
-  }
-  
-  .tile {
+}
+
+.tile {
     aspect-ratio: 1;
     background: #4a90e2;
     border-radius: 8px;
@@ -128,9 +128,9 @@
     transition: transform 0.6s;
     transform-style: preserve-3d;
     position: relative;
-  }
-  
-  .tile::before {
+}
+
+.tile::before {
     content: "?";
     position: absolute;
     backface-visibility: hidden;
@@ -142,19 +142,19 @@
     background: #4a90e2;
     color: white;
     border-radius: 8px;
-  }
-  
-  .tile.flipped {
+}
+
+.tile.flipped {
     background: #f8f9fa;
     transform: rotateY(180deg);
-  }
-  
-  .tile.flipped::before {
+}
+
+.tile.flipped::before {
     content: "";
     background: #f8f9fa;
-  }
-  
-  .tile.matched {
+}
+
+.tile.matched {
     background: #7ed321 !important;
     cursor: not-allowed;
-  }
+}
