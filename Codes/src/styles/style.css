@@ -421,7 +421,7 @@ html {
   width: 100%;
   max-width: 800px;
   margin: 40px auto;
-  background: rgb(185, 82, 82);
+  background: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   overflow: hidden;
