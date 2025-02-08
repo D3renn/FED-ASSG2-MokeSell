@@ -6,6 +6,7 @@
     min-height: 100vh;
     background: linear-gradient(to bottom right, #000000, #333333); /* Black gradient */
     padding: 20px;
+    font: 700 16px / 1.1 "Arial", sans-serif;
 }
 
 .registerForm form {
@@ -16,6 +17,7 @@
     width: 100%;
     max-width: 400px;
     text-align: center;
+    font: 700 16px / 1.1 "Arial", sans-serif;
 }
 
 .registerForm .form-title {

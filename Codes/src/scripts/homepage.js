@@ -1,6 +1,6 @@
-const APIKEY = "67a717854d8744093c827ff3";
-const CATEGORIES_URL = "https://mokesell-209e.restdb.io/rest/categories";
-const LISTINGS_URL = "https://mokesell-209e.restdb.io/rest/listings";
+const APIKEY = "678a13b229bb6d4dd6c56bd2";
+const CATEGORIES_URL = "https://mokesell-2304.restdb.io/rest/categories";
+const LISTINGS_URL = "https://mokesell-2304.restdb.io/rest/listings";
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchCategories();
@@ -162,3 +162,8 @@ function viewListing(listingId) {
     localStorage.setItem("viewListingId", listingId);
     window.location.href = `/listing/view`;
 }
+
+fetch('data.json')
+  .then(response => response.json()) // Parse the JSON response
+  .then(data => console.log(data)) // Handle the data
+  .catch(error => console.error('Error loading JSON:', error));

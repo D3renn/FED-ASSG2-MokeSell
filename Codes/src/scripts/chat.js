@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function getAllMessages() {
     const from = localStorage.getItem("loginId");
-    const APIKEY = "67a717854d8744093c827ff3";
-    const MESSAGES_URL = "https://mokesell-209e.restdb.io/rest/messages";
+    const APIKEY = "678a13b229bb6d4dd6c56bd2";
+    const MESSAGES_URL = "https://mokesell-2304.restdb.io/rest/messages";
 
     // Fetch all messages where the user is the `from` or the `to`
     const query = {
@@ -90,9 +90,9 @@ function loadChat(contact) {
     const chatHeader = document.getElementById('chat-header');
     const chatInputContainer = document.getElementById('chat-input-container');
     const APIKEY = "67a717854d8744093c827ff3";
-    const ACCOUNTS_URL = "https://mokesell-209e.restdb.io/rest/accounts";
-    const LISTINGS_URL = "https://mokesell-209e.restdb.io/rest/listings";
-    const OFFERS_URL = "https://mokesell-209e.restdb.io/rest/offers";
+    const ACCOUNTS_URL = "https://mokesell-2304.restdb.io/rest/accounts";
+    const LISTINGS_URL = "https://mokesell-2304.restdb.io/rest/listings";
+    const OFFERS_URL = "https://mokesell-2304.restdb.io/rest/offers";
     const from = localStorage.getItem("loginId");
     const to = contact;
     
@@ -254,8 +254,8 @@ function sendMessage() {
     const message = messageInput.value.trim();
     const from = localStorage.getItem("loginId");
     const to = localStorage.getItem("currentChat");
-    const APIKEY = "67a717854d8744093c827ff3";
-    const MESSAGES_URL = "https://mokesell-209e.restdb.io/rest/messages";
+    const APIKEY = "678a13b229bb6d4dd6c56bd2";
+    const MESSAGES_URL = "https://mokesell-2304.restdb.io/rest/messages";
 
     if (message === '') return;
 

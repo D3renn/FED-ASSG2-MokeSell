@@ -1,9 +1,9 @@
 import { checkUserLoggedIn } from './utils.js';
 
-const APIKEY = "67a717854d8744093c827ff3";
-const BASE_URL = "https://mokesell-209e.restdb.io/rest/listings";
+const APIKEY = "678a13b229bb6d4dd6c56bd2";
+const BASE_URL = "https://mokesell-2304.restdb.io/rest/listings";
 const IMAGES_URL = "/src/images/index.txt";
-const CATEGORIES_URL = "https://mokesell-209e.restdb.io/rest/categories";
+const CATEGORIES_URL = "https://mokesell-2304.restdb.io/rest/categories";
 
 document.addEventListener("DOMContentLoaded", () => {
     checkUserLoggedIn(); // Check if the user is logged in

@@ -126,8 +126,8 @@ function updateTimer() {
 }
 
 function addPointsToUser(pointsToAdd) {
-    const APIKEY = "67a717854d8744093c827ff3";
-    const BASE_URL = "https://mokesell-209e.restdb.io/rest/accounts/";
+    const APIKEY = "678a13b229bb6d4dd6c56bd2";
+    const BASE_URL = "https://mokesell-2304.restdb.io/rest/accounts/";
     let loginId = localStorage.getItem("loginId");
     let gamepoints = +localStorage.getItem("gamepoints") || 0;
 

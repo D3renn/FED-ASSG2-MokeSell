@@ -139,16 +139,13 @@ body {
 }
 
 /* Logout Button */
-.logout-container {
-  text-align: right;
-  margin-right: 20px; 
-}
-
 #logoutBtn {
   padding: 10px 20px;
   font-size: 1rem;
   border-radius: 5px;
   transition: transform 0.2s ease-in-out;
+  text-align: right;
+  margin-right: 20px; 
 }
 
 #logoutBtn:hover {
@@ -186,4 +183,20 @@ body {
 .coupon-card .card-text {
   font-size: 1rem;
   margin-bottom: 15px;
+}
+
+@media (max-width: 748px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-animation {
+    margin-bottom: 15px;
+  }
+
+  .profile-details {
+    margin-bottom: 15px;
+  }
 }

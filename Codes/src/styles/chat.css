@@ -183,12 +183,19 @@
 .offer-card {
   display: flex;
   align-items: center;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
   padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
-  width: 100%;
+  background-color: white; /* Set background color to white */
+}
+
+.offer-card.sent {
+  align-self: flex-end;
+}
+
+.offer-card.received {
+  align-self: flex-start;
 }
 
 .offer-image {
@@ -214,6 +221,7 @@
 }
 
 .offer-status {
+  margin-left: 20px;
   margin-top: 10px;
 }
 
@@ -232,4 +240,34 @@
 .rating-container .bi-star:hover,
 .rating-container .bi-star:hover ~ .bi-star {
   color: #ff4500;
+}
+
+.animation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .main-layout {
+    flex-direction: column;
+  }
+
+  .left-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .chat-section {
+    width: 100%;
+  }
 }

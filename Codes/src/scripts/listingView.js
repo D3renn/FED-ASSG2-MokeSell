@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const APIKEY = "67a717854d8744093c827ff3";
-    const BASE_URL = "https://mokesell-209e.restdb.io/rest/listings";
-    const OFFERS_URL = "https://mokesell-209e.restdb.io/rest/offers";
-    const MESSAGES_URL = "https://mokesell-209e.restdb.io/rest/messages";
+    const APIKEY = "678a13b229bb6d4dd6c56bd2";
+    const BASE_URL = "https://mokesell-2304.restdb.io/rest/listings";
+    const OFFERS_URL = "https://mokesell-2304.restdb.io/rest/offers";
+    const MESSAGES_URL = "https://mokesell-2304.restdb.io/rest/messages";
     const listingId = localStorage.getItem("viewListingId");
 
     if (!listingId) {

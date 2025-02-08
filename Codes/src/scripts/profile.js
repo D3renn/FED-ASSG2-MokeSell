@@ -6,8 +6,8 @@ checkUserLoggedIn();
 // Store the user ID in localStorage
 let username = localStorage.getItem("username"); 
 let gamepoints = localStorage.getItem("gamepoints"); 
-const APIKEY = "67a717854d8744093c827ff3";
-const ACCOUNTS_URL = "https://mokesell-209e.restdb.io/rest/accounts";
+const APIKEY = "678a13b229bb6d4dd6c56bd2";
+const ACCOUNTS_URL = "https://mokesell-2304.restdb.io/rest/accounts";
 const loginId = localStorage.getItem("loginId");
 
 // Get the elements where the user data will be displayed
@@ -36,28 +36,6 @@ function fetchProfile() {
         console.error("Error fetching profile:", error);
     });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Load Lottie animation
-    const profileLottie = document.getElementById('profile-lottie');
-    const animation = lottie.loadAnimation({
-      container: profileLottie,
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: '/src/animations/profile-animation.json' // Path to your Lottie JSON file
-    });
-  
-    // Example data for profile details
-    document.getElementById('usernameDisplay').textContent = 'JaneDoe';
-    document.getElementById('gamepointsDisplay').textContent = '1500';
-  
-    // Logout button functionality
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-      alert('Logging out...');
-      // Add your logout logic here (e.g., redirect to login page)
-    });
-  });
 
 // Display the username and game points in the respective elements
 if (username && gamepoints !== null) {
@@ -103,7 +81,7 @@ document.querySelectorAll('.redeem-btn').forEach(button => {
             .then((response) => response.json())
             .then(() => {
                 // Add coupon to the database
-                fetch("https://mokesell-209e.restdb.io/rest/coupons", {
+                fetch("https://mokesell-2304.restdb.io/rest/coupons", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
