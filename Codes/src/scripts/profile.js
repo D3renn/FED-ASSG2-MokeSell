@@ -37,6 +37,28 @@ function fetchProfile() {
     });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Load Lottie animation
+    const profileLottie = document.getElementById('profile-lottie');
+    const animation = lottie.loadAnimation({
+      container: profileLottie,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/src/animations/profile-animation.json' // Path to your Lottie JSON file
+    });
+  
+    // Example data for profile details
+    document.getElementById('usernameDisplay').textContent = 'JaneDoe';
+    document.getElementById('gamepointsDisplay').textContent = '1500';
+  
+    // Logout button functionality
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      alert('Logging out...');
+      // Add your logout logic here (e.g., redirect to login page)
+    });
+  });
+
 // Display the username and game points in the respective elements
 if (username && gamepoints !== null) {
     usernameDisplay.textContent = username;

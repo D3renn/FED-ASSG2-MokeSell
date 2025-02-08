@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font: 700 16px / 1.1 "Arial", sans-serif;
   overflow-x: hidden;
 }
 
@@ -81,6 +81,78 @@
   border: none;
   padding: 5px;
   cursor: pointer;
+}
+/* Profile Section */
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-header h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Profile Container */
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Lottie Animation */
+.profile-animation {
+  width: 150px;
+  height: 150px;
+}
+
+.lottie-animation {
+  width: 100%;
+  height: 100%;
+}
+
+/* Profile Details */
+.profile-details {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.profile-item {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.profile-item strong {
+  color: #333;
+}
+
+/* Logout Button */
+.logout-container {
+  text-align: right;
+  margin-right: 20px; 
+}
+
+#logoutBtn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: transform 0.2s ease-in-out;
+}
+
+#logoutBtn:hover {
+  transform: scale(1.05);
 }
 
 /* Coupon Redemption Section */
