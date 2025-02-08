@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
+
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Header Section */
@@ -11,6 +17,8 @@
   color: white;
   padding: 20px;
   position: relative;
+  left: 0;
+  width: 100%;
 }
 
 .logo {
@@ -22,6 +30,7 @@
 }
 
 /* Top Bar */
+
 .top-bar {
   display: flex;
   align-items: center;
@@ -461,3 +470,4 @@ p {
   font-size: 1rem;
   margin-bottom: 15px;
 }
+

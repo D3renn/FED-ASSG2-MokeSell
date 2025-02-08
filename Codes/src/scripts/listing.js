@@ -124,3 +124,7 @@ window.deleteListing = function(listingId) {
         });
     }
 }
+
+function routeCreateListing() {
+    window.location.href = `/listing/create`;
+}
