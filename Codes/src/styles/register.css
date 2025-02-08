@@ -1,10 +1,11 @@
 /****** Register Form Specific Styles ******/
 .registerForm {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom right, #000000, #333333); /* Black gradient */
+    background: linear-gradient(to bottom right, #000000, #333333);
+    /* Black gradient */
     padding: 20px;
     font: 700 16px / 1.1 "Arial", sans-serif;
 }
@@ -22,7 +23,8 @@
 
 .registerForm .form-title {
     font-size: 1.8rem;
-    color: #000000; /* Title color */
+    color: #000000;
+    /* Title color */
     margin-bottom: 20px;
     font-weight: bold;
 }
@@ -36,7 +38,8 @@
     display: block;
     margin-bottom: 5px;
     font-size: 0.9rem;
-    color: #000000; /* Label color */
+    color: #000000;
+    /* Label color */
 }
 
 .registerForm .form-group input {
@@ -50,15 +53,18 @@
 }
 
 .registerForm .form-group input:focus {
-    border-color: #000000; /* Focus border color */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Focus shadow */
+    border-color: #000000;
+    /* Focus border color */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* Focus shadow */
 }
 
 .registerForm .btn {
     width: 100%;
     padding: 10px;
     font-size: 1rem;
-    background-color: #000000; /* Button background color */
+    background-color: #000000;
+    /* Button background color */
     color: white;
     border: none;
     border-radius: 5px;
@@ -67,11 +73,13 @@
 }
 
 .registerForm .btn:hover {
-    background-color: #333333; /* Hover effect */
+    background-color: #333333;
+    /* Hover effect */
 }
 
 .registerForm .btn:active {
-    background-color: #1a1a1a; /* Active button effect */
+    background-color: #1a1a1a;
+    /* Active button effect */
     transform: scale(0.98);
 }
 
@@ -80,11 +88,11 @@
     .registerForm {
         padding: 10px;
     }
-    
+
     .registerForm form {
         padding: 20px;
     }
-    
+
     .registerForm .form-title {
         font-size: 1.5rem;
     }
@@ -92,17 +100,20 @@
 
 /* Login Link Section */
 .loginLink {
-    margin-top: 15px; /* Add spacing above the login link */
+    margin-top: 15px;
+    /* Add spacing above the login link */
     text-align: center;
     font-size: 0.9rem;
 }
 
 .loginLink a {
-    color: #007bff; /* Bootstrap primary blue */
+    color: #007bff;
+    /* Bootstrap primary blue */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .loginLink a:hover {
-    color: #0056b3; /* Darker blue on hover */
+    color: #0056b3;
+    /* Darker blue on hover */
 }

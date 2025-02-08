@@ -12,17 +12,22 @@ html {
 }
 
 /* Header Section */
-/* Header Section */
 .header {
   background-color: #333;
   color: white;
   padding: 20px;
-  position: fixed; /* Anchors the header to the top */
-  top: 0; /* Ensures it stays at the very top */
-  left: 0; /* Aligns it to the left edge */
-  width: 100%; /* Makes it span the full width of the viewport */
-  z-index: 1000; /* Ensures it stays above other content */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+  position: fixed;
+  /* Anchors the header to the top */
+  top: 0;
+  /* Ensures it stays at the very top */
+  left: 0;
+  /* Aligns it to the left edge */
+  width: 100%;
+  /* Makes it span the full width of the viewport */
+  z-index: 1000;
+  /* Ensures it stays above other content */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Adds a subtle shadow for depth */
 }
 
 .logo {
@@ -48,7 +53,7 @@ html {
 }
 
 /* Icons & Menu */
- .right-icons {
+.right-icons {
   display: flex;
   gap: 25px;
   align-items: center;
@@ -92,7 +97,8 @@ html {
   outline: none;
 }
 
-.search-icon, .cam-icon {
+.search-icon,
+.cam-icon {
   background: none;
   border: none;
   padding: 5px;
@@ -117,6 +123,7 @@ html {
     flex-direction: column;
     align-items: center;
   }
+
   .filter-bar {
     flex-direction: column;
     gap: 20px;
@@ -142,7 +149,7 @@ html {
 .dropdown {
   position: relative;
   display: inline-block;
-  
+
 }
 
 .dropbtn {
@@ -194,8 +201,10 @@ html {
 .filter-bar {
   display: flex;
   justify-content: space-around;
-  border-top: 2px solid #ccc; /* Add a border above for separation */
-  border-bottom: 2px solid #ccc; /* Add a border below for separation */
+  border-top: 2px solid #ccc;
+  /* Add a border above for separation */
+  border-bottom: 2px solid #ccc;
+  /* Add a border below for separation */
   padding-top: 10px;
   padding-bottom: 10px;
   margin: 20px 50px 20px 50px;
@@ -203,8 +212,10 @@ html {
 
 .filter {
   display: flex;
-  gap: 100px; /* Add spacing between buttons */
-  font: 800 36px / 1.2 "futura-pt-bold", sans-serif; /* Bold and larger font */
+  gap: 100px;
+  /* Add spacing between buttons */
+  font: 800 36px / 1.2 "futura-pt-bold", sans-serif;
+  /* Bold and larger font */
   text-align: center;
 }
 
@@ -217,22 +228,27 @@ html {
   cursor: pointer;
   color: #000;
   padding: 5px 0;
-  border-bottom: 2px solid transparent; /* Default no underline */
+  border-bottom: 2px solid transparent;
+  /* Default no underline */
   transition: all 0.3s;
 }
 
 .filter-button:hover {
-  color: #ff4500; /* Change color on hover */
-  border-bottom: 2px solid #ff4500; /* Underline on hover */
+  color: #ff4500;
+  /* Change color on hover */
+  border-bottom: 2px solid #ff4500;
+  /* Underline on hover */
 }
 
 .filter-button.active {
   color: #000;
   border-bottom: 2px solid #000;
 }
+
 .filter-button:focus {
   outline: 2px solid #ff4500;
 }
+
 * {
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -242,24 +258,29 @@ html {
     flex-direction: column;
     align-items: center;
   }
+
   .filter-bar {
     flex-direction: column;
     gap: 20px;
     align-items: center;
   }
+
   .filter {
     flex-direction: column;
-    gap: 0 !important; /* Disable gap on phones */
+    gap: 0 !important;
+    /* Disable gap on phones */
   }
+
   .product-scroll {
     flex-direction: column;
     align-items: center;
   }
+
   .product-card {
     width: 90%;
     margin-bottom: 20px;
   }
-  
+
   .right-icons button {
     padding: 10px;
     text-align: left;
@@ -290,12 +311,13 @@ html {
     justify-content: center;
     position: relative;
   }
-  
+
   .body {
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    padding-top: 80px; /* Adjust this value based on the height of your header */
+    padding-top: 80px;
+    /* Adjust this value based on the height of your header */
   }
 
   .menu-btn {
@@ -316,13 +338,15 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 20px; /* Adjusted margin */
+  margin: 10px 20px;
+  /* Adjusted margin */
 }
 
 .section-header h2 {
   font-size: 2rem;
   font-weight: bold;
-  padding-top: 0.5rem; /* Adjusted top padding */
+  padding-top: 0.5rem;
+  /* Adjusted top padding */
   font: 800 45px / 1.05 "futura-pt-bold", sans-serif;
   color: #000;
   margin-bottom: 0;
@@ -349,14 +373,18 @@ html {
 
 @media (max-width: 768px) {
   .section-header h2 {
-    font-size: 1.5rem; /* Smaller font size on phones */
-    padding-top: 0.25rem; /* Adjusted top padding */
+    font-size: 1.5rem;
+    /* Smaller font size on phones */
+    padding-top: 0.25rem;
+    /* Adjusted top padding */
   }
 }
 
 .product-section {
-  margin: 10px 0; /* Adjusted margin */
-  padding: 10px; /* Adjusted padding */
+  margin: 10px 0;
+  /* Adjusted margin */
+  padding: 10px;
+  /* Adjusted padding */
   border-radius: 5px;
 }
 
@@ -364,9 +392,12 @@ html {
 .product-scroll {
   display: flex;
   gap: 20px;
-  overflow-x: auto; /* Enables horizontal scrolling */
-  scroll-behavior: smooth; /* Smooth scrolling effect */
-  padding: 20px 0; /* Optional: Adds padding to the scrolling area */
+  overflow-x: auto;
+  /* Enables horizontal scrolling */
+  scroll-behavior: smooth;
+  /* Smooth scrolling effect */
+  padding: 20px 0;
+  /* Optional: Adds padding to the scrolling area */
   margin-left: 6rem;
 }
 
@@ -378,16 +409,20 @@ html {
 
 /* Scrollbar Styling for Chrome */
 .product-scroll::-webkit-scrollbar {
-  height: 8px; /* Height of the horizontal scrollbar */
+  height: 8px;
+  /* Height of the horizontal scrollbar */
 }
 
 .product-scroll::-webkit-scrollbar-thumb {
-  background-color: #aaa; /* Color of the scrollbar thumb */
-  border-radius: 4px; /* Rounded scrollbar thumb */
+  background-color: #aaa;
+  /* Color of the scrollbar thumb */
+  border-radius: 4px;
+  /* Rounded scrollbar thumb */
 }
 
 .product-scroll::-webkit-scrollbar-track {
-  background-color: #f7f7f7; /* Background of the scrollbar track */
+  background-color: #f7f7f7;
+  /* Background of the scrollbar track */
 }
 
 /* Product Cards */
@@ -397,7 +432,8 @@ html {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  min-width: 300px; /* Minimum width of each card */
+  min-width: 300px;
+  /* Minimum width of each card */
   cursor: pointer;
 }
 
@@ -406,7 +442,8 @@ html {
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
-  max-height: 150px; /* Limit the height of the image */
+  max-height: 150px;
+  /* Limit the height of the image */
 }
 
 .product-card h3 {
@@ -423,7 +460,8 @@ html {
   transform: translateY(-10px);
   transition: transform 0.3s;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  background-color: #111; /* Slightly lighter */
+  background-color: #111;
+  /* Slightly lighter */
 }
 
 /* Advertisement Container */
@@ -437,34 +475,43 @@ html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   overflow: hidden;
-  height: auto; /* Adjust height dynamically based on content */
+  height: auto;
+  /* Adjust height dynamically based on content */
 }
 
 /* Advertisement Slider */
 .advertisement-slider {
   position: relative;
-  width: 200%; /* For sliding functionality */
-  display: flex; /* Align slides using flexbox */
+  width: 200%;
+  /* For sliding functionality */
+  display: flex;
+  /* Align slides using flexbox */
 }
 
 .ad-page {
-  width: 50%; /* Each slide takes up half of the slider's width */
-  display: none; /* Hide inactive slides */
+  width: 50%;
+  /* Each slide takes up half of the slider's width */
+  display: none;
+  /* Hide inactive slides */
   text-align: center;
   padding: 20px;
-  box-sizing: border-box; /* Include padding in width calculation */
+  box-sizing: border-box;
+  /* Include padding in width calculation */
 }
 
 .ad-page.active {
-  display: block; /* Show only the active slide */
+  display: block;
+  /* Show only the active slide */
 }
 
 /* Lottie Animation Styling */
 dotlottie-player {
   width: 300px;
   height: 300px;
-  margin: 0 auto 20px; /* Center horizontally */
-  display: block; /* Ensure it behaves as a block element */
+  margin: 0 auto 20px;
+  /* Center horizontally */
+  display: block;
+  /* Ensure it behaves as a block element */
 }
 
 /* Advertisement Text */
@@ -551,7 +598,8 @@ dotlottie-player {
 .coupon-card .card {
   border: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 15px; /* Make the card rounder */
+  border-radius: 15px;
+  /* Make the card rounder */
 }
 
 .coupon-card .card-body {

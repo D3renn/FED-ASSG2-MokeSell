@@ -40,7 +40,7 @@ html {
 }
 
 /* Icons & Menu */
- .right-icons {
+.right-icons {
   display: flex;
   gap: 25px;
   align-items: center;
@@ -84,7 +84,8 @@ html {
   outline: none;
 }
 
-.search-icon, .cam-icon {
+.search-icon,
+.cam-icon {
   background: none;
   border: none;
   padding: 5px;
@@ -109,6 +110,7 @@ html {
     flex-direction: column;
     align-items: center;
   }
+
   .filter-bar {
     flex-direction: column;
     gap: 20px;
@@ -134,7 +136,7 @@ html {
 .dropdown {
   position: relative;
   display: inline-block;
-  
+
 }
 
 .dropbtn {
@@ -183,5 +185,5 @@ html {
 }
 
 .listing-section {
-    padding: 20px;
+  padding: 20px;
 }

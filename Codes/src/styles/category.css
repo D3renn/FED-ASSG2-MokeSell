@@ -108,7 +108,8 @@ h2 {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    min-width: 300px; /* Minimum width of each card */
+    min-width: 300px;
+    /* Minimum width of each card */
     cursor: pointer;
 }
 
@@ -117,7 +118,8 @@ h2 {
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
-    max-height: 150px; /* Limit the height of the image */
+    max-height: 150px;
+    /* Limit the height of the image */
 }
 
 .product-card h3 {
@@ -134,7 +136,8 @@ h2 {
     transform: translateY(-10px);
     transition: transform 0.3s;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: #111; /* Slightly lighter */
+    background-color: #111;
+    /* Slightly lighter */
 }
 
 .btn-primary {
