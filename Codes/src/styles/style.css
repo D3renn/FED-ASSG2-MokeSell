@@ -12,13 +12,17 @@ html {
 }
 
 /* Header Section */
+/* Header Section */
 .header {
   background-color: #333;
   color: white;
   padding: 20px;
-  position: relative;
-  left: 0;
-  width: 100%;
+  position: fixed; /* Anchors the header to the top */
+  top: 0; /* Ensures it stays at the very top */
+  left: 0; /* Aligns it to the left edge */
+  width: 100%; /* Makes it span the full width of the viewport */
+  z-index: 1000; /* Ensures it stays above other content */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
 }
 
 .logo {
@@ -286,6 +290,13 @@ html {
     justify-content: center;
     position: relative;
   }
+  
+  .body {
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    padding-top: 80px; /* Adjust this value based on the height of your header */
+  }
 
   .menu-btn {
     position: absolute;
@@ -421,8 +432,9 @@ html {
   width: 100%;
   max-width: 800px;
   margin: 40px auto;
+  margin-top: 120px;
   background: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   overflow: hidden;
   height: auto; /* Adjust height dynamically based on content */
@@ -457,7 +469,8 @@ dotlottie-player {
 
 /* Advertisement Text */
 .ad-page h2 {
-  font-size: 24px;
+  font-weight: bold;
+  font: 700 16px;
   margin-bottom: 10px;
 }
 
