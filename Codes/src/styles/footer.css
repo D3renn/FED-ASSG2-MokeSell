@@ -1,0 +1,128 @@
+/* Footer Styles */
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 2em 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-header {
+    font-size: 2rem;
+    margin-bottom: 1em;
+  }
+  
+  .footer-map {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+  }
+  
+  .footer-map iframe {
+    width: 80%;
+    height: 300px;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 0 5%;
+  }
+  
+  .footer-address {
+    text-align: left;
+    max-width: 250px;
+  }
+  
+  .footer-address a {
+    text-decoration: underline;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .footer-address p {
+    text-decoration: underline;
+    color: white;
+  }
+  
+  .footer-bring-to-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .to-top-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+  }
+  
+  .to-top-btn:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  .footer-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: flex-start;
+  }
+  
+  .social {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  
+  .social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .social-icon img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 30%;
+  }
+  
+  .social-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social-link:hover {
+    color: lightgray;
+  }
+  
+  /* Responsive Footer Design */
+  @media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .footer-address,
+    .footer-socials {
+        text-align: center;
+    }
+  }
