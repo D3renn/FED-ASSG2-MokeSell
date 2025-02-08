@@ -1,5 +1,5 @@
-const APIKEY = "678a13b229bb6d4dd6c56bd2";
-const BASE_URL = "https://mokesell-2304.restdb.io/rest/listings";
+const APIKEY = "67a717854d8744093c827ff3";
+const BASE_URL = "https://mokesell-209e.restdb.io/rest/listings";
 
 document.addEventListener("DOMContentLoaded", () => {
     const categoryId = localStorage.getItem("categoryId");
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function fetchCategoryName(categoryId) {
-    fetch(`https://mokesell-2304.restdb.io/rest/categories/${categoryId}`, {
+    fetch(`https://mokesell-209e.restdb.io/rest/categories/${categoryId}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

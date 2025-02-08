@@ -1,5 +1,5 @@
-const APIKEY = "678a13b229bb6d4dd6c56bd2";
-const CATEGORIES_URL = "https://mokesell-2304.restdb.io/rest/categories";
+const APIKEY = "67a717854d8744093c827ff3";
+const CATEGORIES_URL = "https://mokesell-209e.restdb.io/rest/categories";
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchCategories();
