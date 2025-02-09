@@ -1,92 +1,15 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-/* Header Section */
-.header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-}
-
-.logo {
-    font-family: 'Black Ops One', sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* Top Bar */
-.top-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-/* Icons & Menu */
-.menu-btn, span.icon {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.left-icons, .right-icons {
-    display: flex;
-    gap: 10px;
-}
-
-.right-icons button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-/* Search Bar */
-.search-container {
-    display: flex;
-    align-items: center;
-    background: white;
-    padding: 5px;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.search-bar {
-    border: none;
-    padding: 8px;
-    flex-grow: 1;
-    outline: none;
-}
-
-.search-icon, .cam-icon {
-    background: none;
-    border: none;
-    padding: 5px;
-    cursor: pointer;
-    
-}
-
-.game-container {
+  /* Game Section */
+  .game-container {
     max-width: 800px;
     margin: 2rem auto;
+    margin-top: 150px;
     padding: 20px;
     background: #f0f4f8;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+  }
 
-.game-header {
+  .game-header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
@@ -94,22 +17,24 @@
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
+  }
 
-.points, .lives, .timer {
-    font-size: 1.2em;
-}
+  .points,
+  .lives,
+  .timer {
+    font: 700 16px / 1.2 "Arial", sans-serif;
+  }
 
-.game-board {
+  .game-board {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     padding: 10px;
     background: #fff;
     border-radius: 10px;
-}
+  }
 
-.tile {
+  .tile {
     aspect-ratio: 1;
     background: #4a90e2;
     border-radius: 8px;
@@ -121,9 +46,9 @@
     transition: transform 0.6s;
     transform-style: preserve-3d;
     position: relative;
-}
+  }
 
-.tile::before {
+  .tile::before {
     content: "?";
     position: absolute;
     backface-visibility: hidden;
@@ -135,19 +60,26 @@
     background: #4a90e2;
     color: white;
     border-radius: 8px;
-}
+  }
 
-.tile.flipped {
+  .tile.flipped {
     background: #f8f9fa;
     transform: rotateY(180deg);
-}
+  }
 
-.tile.flipped::before {
+  .tile.flipped::before {
     content: "";
     background: #f8f9fa;
-}
+  }
 
-.tile.matched {
+  .tile.matched {
     background: #7ed321 !important;
     cursor: not-allowed;
-}
+  }
+
+  @media screen and (max-width: 768px) {
+    .game-container {
+      margin-top: 200px;
+    }
+    
+  }

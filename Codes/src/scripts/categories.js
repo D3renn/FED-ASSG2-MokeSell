@@ -22,9 +22,11 @@ function fetchCategories() {
             categoryList.innerHTML = '<p>No categories available.</p>';
         } else {
             data.forEach((category) => {
+                let icons = '';
+
                 const categoryItem = `
                     <div class="category-item" onclick="redirectToCategory('${category._id}')">
-                        <h4 class="category-item-title">${category.categoryName}</h4>
+                        <h4 class="category-item-title">${category.categoryName}${icons}</h4>
                     </div>
                 `;
                 categoryList.insertAdjacentHTML('beforeend', categoryItem);

@@ -1,51 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listing View</title>
     <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="/src/styles/listingView.css" />
-    <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous"
-    />
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-    />
-    <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"
-    ></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 </head>
+
 <body>
     <!-- Header Section -->
     <header class="header">
         <div class="top-bar">
-            <div class="header-left">
-                <button class="menu-btn"><span class="bi bi-list"></span></button>
-                <h1 class="logo" onclick="routeHome()" style="cursor: pointer;">MokeSell</h1>
-            </div>
+            <h1 class="logo" onclick="routeHome()" style="cursor: pointer;">MokeSell</h1>
             <div class="search-container">
-                <button class="search-icon"><span class="bi bi-search"></span></button>
-                <input
-                type="text"
-                class="search-bar"
-                placeholder="Search Here..."
-                />
-                <button class="cam-icon"><span class="bi bi-camera"></span></button>
+                <button class="search-icon"><i class="fas fa-search"></i></button>
+                <input type="text" class="search-bar" placeholder="Search Here...">
+                <button class="cam-icon"><i class="fas fa-camera"></i></button>
             </div>
             <div class="right-icons">
-                <button id="gameBtn" onclick="routeGame()">GAME</button>
-                <button id="chatBtn" onclick="routeChat()">CHAT</button>
-                <button onclick="routeListing()">MY LISTING</button>
-                <button onclick="routeProfile()">PROFILE</button>
+                <div class="icon-container">
+                    <button class="icon-btn" onclick="routeChat()"><i class="fas fa-comments"></i></button>
+                    <span>Chat</span>
+                </div>
+                <div class="icon-container">
+                    <button class="icon-btn" onclick="routeGame()"><i class="fas fa-gamepad"></i></button>
+                    <span>Game</span>
+                </div>
+                <div class="icon-container">
+                    <button class="icon-btn" onclick="routeProfile()"><i class="fas fa-user"></i></button>
+                    <span>Profile</span>
+                </div>
+                <div class="icon-container">
+                    <button class="icon-btn" onclick="routeListing()"><i class="fas fa-bars"></i></button>
+                    <span>List</span>
+                </div>
             </div>
         </div>
     </header>
@@ -54,8 +53,6 @@
     <div class="container mt-5">
         <!-- Image Section -->
         <div class="image-section">
-            <div class="image-placeholder"></div>
-            <div class="image-placeholder"></div>
             <div class="image-placeholder"></div>
         </div>
 
@@ -93,7 +90,8 @@
         <div class="seller-info">
             <h3>Meet the Seller</h3>
             <div class="seller-profile">
-                <img src="/src/images/avatar-placeholder.jpg" alt="Profile Picture" class="profile-picture-placeholder" />
+                <img src="/src/images/avatar-placeholder.jpg" alt="Profile Picture"
+                    class="profile-picture-placeholder" />
                 <p class="seller-username">user</p>
             </div>
             <div class="seller-actions">
@@ -127,11 +125,13 @@
                     <p>Current Price: <span class="product-price">S$10</span></p>
                     <div class="mb-3">
                         <label for="offerPrice" class="form-label">Your Offer</label>
-                        <input type="number" class="form-control" id="offerPrice" placeholder="Enter your offer" required>
+                        <input type="number" class="form-control" id="offerPrice" placeholder="Enter your offer"
+                            required>
                     </div>
                     <div class="mb-3">
                         <label for="offerMessage" class="form-label">Message</label>
-                        <textarea class="form-control" id="offerMessage" placeholder="Enter your message" required></textarea>
+                        <textarea class="form-control" id="offerMessage" placeholder="Enter your message"
+                            required></textarea>
                     </div>
                     <h5>Payment Method</h5>
                     <div class="mb-3">
@@ -142,13 +142,15 @@
                             <input type="radio" id="visa" name="paymentMethod" value="visa">
                             <label for="visa"><img src="/src/images/visa.png" alt="Visa" width="50"></label>
                             <input type="radio" id="mastercard" name="paymentMethod" value="mastercard">
-                            <label for="mastercard"><img src="/src/images/mastercard.png" alt="MasterCard" width="50"></label>
+                            <label for="mastercard"><img src="/src/images/mastercard.png" alt="MasterCard"
+                                    width="50"></label>
                         </div>
                     </div>
                     <div id="creditCardInfo" style="display: none;">
                         <div class="mb-3">
                             <label for="cardHolderName" class="form-label">Card Holder Name</label>
-                            <input type="text" class="form-control" id="cardHolderName" placeholder="Enter card holder name">
+                            <input type="text" class="form-control" id="cardHolderName"
+                                placeholder="Enter card holder name">
                         </div>
                         <div class="mb-3">
                             <label for="cardNumber" class="form-label">Card Number</label>
@@ -178,4 +180,5 @@
     <script src="/src/scripts/script.js"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </body>
+
 </html>

@@ -1,3 +1,438 @@
-.listing-section {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: 700 16px / 1.1 "Arial", sans-serif;
+  
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  /* Header Section */
+  .header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    /* Anchors the header to the top */
+    top: 0;
+    /* Ensures it stays at the very top */
+    left: 0;
+    /* Aligns it to the left edge */
+    width: 100%;
+    /* Makes it span the full width of the viewport */
+    z-index: 1000;
+    /* Ensures it stays above other content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Adds a subtle shadow for depth */
+  }
+  
+  .logo {
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .logo:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Top Bar */
+  
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Icons & Menu */
+  .right-icons {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+  
+  .icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .icon-container button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .icon-container span {
+    font-size: 15px;
+    color: white;
+  }
+  
+  /* Search Bar */
+  .search-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 5px;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 300px;
+  }
+  
+  .search-bar {
+    border: none;
+    padding: 8px;
+    flex-grow: 1;
+    outline: none;
+  }
+  
+  .search-icon,
+  .cam-icon {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  /* Categories Section */
+  
+  .categories {
+    display: flex;
+    justify-content: space-around;
+    background-color: #222;
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+    margin-top: 140px;
+  }
+  
+  @media (max-width: 768px) {
+    .categories {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .filter-bar {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  
+  .categories button {
+    background: #222;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .categories button:hover {
+    background: #222;
+    transform: scale(1.05);
+  }
+  
+  /* Dropdown Styling */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  
+  }
+  
+  .dropbtn {
+    background: #222;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: block;
+    position: absolute;
+    background: white;
+    min-width: 150px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    visibility: hidden;
+  }
+  
+  /* Dropdown links */
+  .dropdown-content a {
+    color: black;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    transition: background 0.2s ease, padding-left 0.2s ease;
+  }
+  
+  .dropdown-content a:hover {
+    background: #ddd;
+    padding-left: 15px;
+  }
+  
+  /* Dropdown Animation - Show when hovered */
+  .dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  } 
+  /* Base container */
+#listing-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* Space between items */
     padding: 20px;
 }
+/* ---- My Listings Title ---- */
+.listing-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+
+/* Underline effect */
+.listing-title::after {
+    content: "";
+    width: 60%;
+    height: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* ---- Create Listing Button ---- */
+.btn-create {
+    background: linear-gradient(135deg, #007bff, #6610f2);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-create:hover {
+    background: linear-gradient(135deg, #6610f2, #007bff);
+    transform: scale(1.05);
+    box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- Responsive Design ---- */
+@media screen and (max-width: 768px) {
+    .listing-title {
+        font-size: 24px;
+    }
+    
+    .btn-create {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
+}
+
+/* Each listing card */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Image styling */
+.card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Listing content container */
+.card-body {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Listing details */
+.card-text {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Category badges */
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* 📌 Responsive: Stacks cards in 1 column at 748px */
+@media screen and (max-width: 748px) {
+    #listing-list {
+        grid-template-columns: 1fr; /* Single column */
+    }
+
+    .card-body {
+        flex-direction: column;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .categories {
+        margin-top: 210px;
+    }
+}
+
+@media (max-width: 768px) {
+    .categories {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .filter-bar {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+  
+    .filter {
+      flex-direction: column;
+      gap: 0 !important;
+      /* Disable gap on phones */
+    }
+  
+    .product-scroll {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .product-card {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  
+    .right-icons button {
+      padding: 10px;
+      text-align: left;
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+  
+    .top-bar {
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .search-container {
+      width: 90%;
+      margin: 0 auto;
+    }
+  
+    .logo {
+      margin: 0 auto;
+      padding-top: 5px;
+    }
+  
+    .header-left {
+      width: 100%;
+      justify-content: center;
+      position: relative;
+    }
+  
+    .body {
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      padding-top: 80px;
+      /* Adjust this value based on the height of your header */
+    }
+  
+    .menu-btn {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
+    .logo {
+      margin: 0;
+      padding: 0;
+    }
+  }

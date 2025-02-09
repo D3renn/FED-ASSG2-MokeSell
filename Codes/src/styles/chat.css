@@ -5,9 +5,13 @@
   font-family: Arial, sans-serif;
 }
 
+body {
+  padding-top: 80px; /* Adjust this value based on the height of your header */
+}
+
 .main-layout {
   display: flex;
-  height: calc(100vh - 80px); /* Adjust height based on header */
+  height: 90vh
 }
 
 .left-sidebar {

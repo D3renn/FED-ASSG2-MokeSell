@@ -349,3 +349,10 @@ function showOfferAcceptedAnimation() {
         document.body.removeChild(overlay);
     }, 3000); // Remove after 3 seconds
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector(".header");
+    const headerHeight = header.offsetHeight;
+    document.body.style.paddingTop = `${headerHeight}px`;
+  });

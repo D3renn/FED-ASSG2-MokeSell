@@ -12,6 +12,20 @@ body {
     padding-top: 60px;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #F8C8DC, #E0BBE4, #D291BC, #a74fb3, #F4C2C2);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+    color: white;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 /****** Register Form Specific Styles ******/
 .registerForm {
     max-width: 400px;

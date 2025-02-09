@@ -1,5 +1,5 @@
 .search-results {
-    padding: 20px;
+    padding-top: 12vh;
     text-align: center;
 }
 
@@ -8,6 +8,13 @@
     font-weight: bold;
     color: black;
     margin-bottom: 20px;
+}
+
+/* Inherits size in parent h2 */
+#search-query { 
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
 }
 
 .filter-bar {
@@ -143,6 +150,7 @@
 @media (max-width: 768px) {
     .search-results h2 {
         font-size: 20px;
+        padding-top: 13vh;
     }
 
     .filter-bar {

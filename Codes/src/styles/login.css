@@ -12,6 +12,22 @@ body {
     padding-top: 60px;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #E0C3FC, #8EC5FC, #DCC6E0, #BA68C8, #7B1FA2, #4A148C);
+    /* Pearlescent color gradient */
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+    color: white;
+}
+
+/* Color shifting effect */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 .loginForm {
     max-width: 400px;
     margin: 100px auto 30px auto;
