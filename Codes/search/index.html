@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport"="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search Results - MokeSell</title>
     <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="/src/styles/search.css" />
@@ -25,40 +24,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 </head>
-
 <body>
     <!-- Header Section -->
     <header class="header">
         <div class="top-bar">
-            <h1 class="logo">MokeSell</h1>
+            <div class="header-left">
+                <button class="menu-btn"><span class="bi bi-list"></span></button>
+                <h1 class="logo" onclick="routeHome()" style="cursor: pointer;">MokeSell</h1>
+            </div>
             <div class="search-container">
-                <button class="search-icon"><i class="fas fa-search"></i></button>
-                <input type="text" class="search-bar" placeholder="Search Here...">
-                <button class="cam-icon"><i class="fas fa-camera"></i></button>
+                <button class="search-icon"><span class="bi bi-search"></span></button>
+                <input
+                type="text"
+                class="search-bar"
+                placeholder="Search Here..."
+                />
+                <button class="cam-icon"><span class="bi bi-camera"></span></button>
             </div>
             <div class="right-icons">
-                <div class="icon-container">
-                    <button class="icon-btn" onclick="routeChat()"><i class="fas fa-comments"></i></button>
-                    <span>Chat</span>
-                </div>
-                <div class="icon-container">
-                    <span class="icon-btn" onclick="routeHome()"><i class="fas fa-home"></i></span>
-                    <span>Home</span>
-                </div>
-                <div class="icon-container">
-                    <button class="icon"><i class="fas fa-gamepad"></i></button>
-                    <span>Game</span>
-                </div>
-                <div class="icon-container">
-                    <button class="icon-btn" onclick="routeProfile()"><i class="fas fa-user"></i></button>
-                    <span>Profile</span>
-                </div>
-                <div class="icon-container">
-                    <button class="icon-btn"><i class="fas fa-list"></i></button>
-                    <span>List</span>
-                </div>
+                <button id="gameBtn" onclick="routeGame()">GAME</button>
+                <button id="chatBtn" onclick="routeChat()">CHAT</button>
+                <button onclick="routeListing()">MY LISTING</button>
+                <button onclick="routeProfile()">PROFILE</button>
             </div>
         </div>
+    </header>
 
     <!-- Search Results Section -->
     <div class="search-results">
@@ -72,8 +62,67 @@
             <p>Loading search results...</p>
         </div>
     </div>
+
+    <!-- Filter Modals -->
+    <div class="modal fade" id="categoryModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Filter by Category</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="categoryCheckboxes"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="applyFilters('category')">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="conditionModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Filter by Condition</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="conditionCheckboxes"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="applyFilters('condition')">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="priceModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Filter by Price Range</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="price-range">
+                        <label>Min Price: $<span id="minPrice">0</span></label>
+                        <input type="range" id="minPriceRange" min="0" max="1000" value="0">
+                        <label>Max Price: $<span id="maxPrice">1000</span></label>
+                        <input type="range" id="maxPriceRange" min="0" max="1000" value="1000">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="applyFilters('price')">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="/src/scripts/search.js"></script>
     <script src="/src/scripts/script.js"></script>
 </body>
-
 </html>

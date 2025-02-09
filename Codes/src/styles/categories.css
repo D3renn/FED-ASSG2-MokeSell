@@ -9,6 +9,9 @@
 
 h2 {
     text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 #category-list {
@@ -17,14 +20,6 @@ h2 {
     gap: 20px;
     justify-content: center;
     padding: 20px;
-}
-
-.categories-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 130px;
 }
 
 .category-item {
@@ -46,9 +41,8 @@ h2 {
     background-color: #e9ecef;
 }
 
-@media screen and (max-width: 768px) {
-    .categories-container {
-        margin-top: 250px;
+@media (max-width: 768px) {
+    .category-item {
+        min-width: 100%;
     }
-    
 }

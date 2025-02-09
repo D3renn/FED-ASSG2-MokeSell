@@ -1,4 +1,8 @@
+import { checkUserLoggedIn } from './utils.js';
+
 document.addEventListener("DOMContentLoaded", () => {
+    checkUserLoggedIn(); // Check if the user is logged in
+
     const APIKEY = "678a13b229bb6d4dd6c56bd2";
     const BASE_URL = "https://mokesell-2304.restdb.io/rest/listings";
     const OFFERS_URL = "https://mokesell-2304.restdb.io/rest/offers";
@@ -115,9 +119,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
                 .then((response) => response.json())
                 .then(() => {
-                    alert("Offer sent successfully!");
-                    localStorage.setItem("currentChat", to);
-                    window.location.href = "/chat";
+                    showOfferAnimation();
+                    setTimeout(() => {
+                        alert("Offer sent successfully!");
+                        localStorage.setItem("currentChat", to);
+                        window.location.href = "/chat";
+                    }, 3000); // Show alert after animation
                 })
                 .catch((error) => {
                     console.error("Error sending message:", error);
@@ -133,3 +140,15 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "/listing";
     });
 });
+
+function showOfferAnimation() {
+    const overlay = document.createElement('div');
+    overlay.className = 'animation-overlay';
+    overlay.innerHTML = `
+        <dotlottie-player src="https://lottie.host/9f216acb-8548-4bc1-8363-400b0100e82e/V3cM8D5RRj.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+    `;
+    document.body.appendChild(overlay);
+    setTimeout(() => {
+        document.body.removeChild(overlay);
+    }, 3000); // Remove after 3 seconds
+}

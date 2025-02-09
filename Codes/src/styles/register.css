@@ -1,32 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.logo {
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-top: 60px;
+}
+
 /****** Register Form Specific Styles ******/
 .registerForm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(to bottom right, #000000, #333333);
-    /* Black gradient */
-    padding: 20px;
-    font: 700 16px / 1.1 "Arial", sans-serif;
-}
-
-.registerForm form {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    width: 100%;
     max-width: 400px;
+    margin: 100px auto 30px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    font: 700 16px / 1.1 "Arial", sans-serif;
 }
 
-.registerForm .form-title {
-    font-size: 1.8rem;
-    color: #000000;
-    /* Title color */
+.form-title {
+    text-align: center;
     margin-bottom: 20px;
-    font-weight: bold;
 }
 
 .registerForm .form-group {
@@ -38,8 +38,7 @@
     display: block;
     margin-bottom: 5px;
     font-size: 0.9rem;
-    color: #000000;
-    /* Label color */
+    color: #000000; /* Label color */
 }
 
 .registerForm .form-group input {
@@ -53,34 +52,33 @@
 }
 
 .registerForm .form-group input:focus {
-    border-color: #000000;
-    /* Focus border color */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    /* Focus shadow */
+    border-color: #000000; /* Focus border color */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Focus shadow */
 }
 
-.registerForm .btn {
+/* Button Default */
+.btn {
     width: 100%;
     padding: 10px;
-    font-size: 1rem;
-    background-color: #000000;
-    /* Button background color */
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-.registerForm .btn:hover {
-    background-color: #333333;
-    /* Hover effect */
+/* Hover Effect (Button Pops Forward & Turns Green) */
+.btn:hover {
+    transform: scale(1.1);
+    background-color: #28a745; /* Green */
 }
 
-.registerForm .btn:active {
-    background-color: #1a1a1a;
-    /* Active button effect */
-    transform: scale(0.98);
+/* Press Effect (Stays Green on Click) */
+.btn:active {
+    background-color: #28a745; /* Green */
+    transform: scale(1);
 }
 
 /****** Mobile Responsiveness ******/
@@ -88,32 +86,42 @@
     .registerForm {
         padding: 10px;
     }
-
-    .registerForm form {
-        padding: 20px;
-    }
-
+    
     .registerForm .form-title {
         font-size: 1.5rem;
     }
 }
 
-/* Login Link Section */
+.feedback {
+    animation: shake 0.5s ease-in-out;
+    color: #dc3545; /* Red */
+}
+
 .loginLink {
-    margin-top: 15px;
-    /* Add spacing above the login link */
     text-align: center;
-    font-size: 0.9rem;
+    padding-bottom: 50px;
 }
 
-.loginLink a {
-    color: #007bff;
-    /* Bootstrap primary blue */
-    text-decoration: none;
-    transition: color 0.3s ease;
+.lottie-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
 }
 
-.loginLink a:hover {
-    color: #0056b3;
-    /* Darker blue on hover */
+.animation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    pointer-events: none;
 }
