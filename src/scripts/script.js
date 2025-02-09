@@ -144,6 +144,6 @@ function routeListing() {
 }
 
 function routeChat() {
-    window.location.href = "../chat";
+    window.location.href = "/chat";
 }
 
