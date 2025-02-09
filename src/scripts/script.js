@@ -128,22 +128,22 @@ dots.forEach(dot => {
 setInterval(slideAdvertisements, 5000);
 
 function routeGame() {
-    window.location.href = "/game";
+    window.location.href = "game.html";
 }
 
 function routeHome() {
-    window.location.href = "/";
+    window.location.href = "index.html";
 }
 
 function routeProfile() {
-    window.location.href = "/profile";
+    window.location.href = "profile.html";
 }
 
 function routeListing() {
-    window.location.href = "/listing";
+    window.location.href = "listing.html";
 }
 
 function routeChat() {
-    window.location.href = "/chat";
+    window.location.href = "chat.html";
 }
 

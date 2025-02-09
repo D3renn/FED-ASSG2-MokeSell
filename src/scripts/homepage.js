@@ -155,10 +155,10 @@ function filterProducts(category) {
 
 function redirectToCategory(categoryId) {
     localStorage.setItem("categoryId", categoryId);
-    window.location.href = `/category`;
+    window.location.href = `category.html`;
 }
 
 function viewListing(listingId) {
     localStorage.setItem("viewListingId", listingId);
-    window.location.href = `/listing/view`;
+    window.location.href = `listingView.html`;
 }
