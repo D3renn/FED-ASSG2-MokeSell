@@ -7,8 +7,7 @@
 
 .main-layout {
   display: flex;
-  height: calc(100vh - 80px);
-  /* Adjust height based on header */
+  height: calc(100vh - 80px); /* Adjust height based on header */
 }
 
 .left-sidebar {
@@ -42,8 +41,7 @@
   transition: background-color 0.3s;
 }
 
-.contact-item.active,
-.contact-item:hover {
+.contact-item.active, .contact-item:hover {
   background-color: #e0e0e0;
 }
 
@@ -189,8 +187,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
-  background-color: white;
-  /* Set background color to white */
+  background-color: white; /* Set background color to white */
 }
 
 .offer-card.sent {
@@ -241,7 +238,7 @@
 }
 
 .rating-container .bi-star:hover,
-.rating-container .bi-star:hover~.bi-star {
+.rating-container .bi-star:hover ~ .bi-star {
   color: #ff4500;
 }
 

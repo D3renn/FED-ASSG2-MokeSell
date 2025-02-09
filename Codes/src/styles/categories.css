@@ -19,6 +19,14 @@ h2 {
     padding: 20px;
 }
 
+.categories-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 130px;
+}
+
 .category-item {
     background-color: #f8f9fa;
     color: #212529;
@@ -36,4 +44,11 @@ h2 {
     transition: transform 0.3s;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     background-color: #e9ecef;
+}
+
+@media screen and (max-width: 768px) {
+    .categories-container {
+        margin-top: 250px;
+    }
+    
 }
