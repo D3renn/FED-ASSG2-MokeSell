@@ -61,5 +61,5 @@ function fetchCategoryListings(categoryId) {
 
 function viewListing(listingId) {
     localStorage.setItem("viewListingId", listingId);
-    window.location.href = `listingView.html`;
+    window.location.href = `/listing/view`;
 }
