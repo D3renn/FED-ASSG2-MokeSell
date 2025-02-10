@@ -8,6 +8,7 @@
     font-weight: bold;
     color: black;
     margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 /* Inherits size in parent h2 */
@@ -151,6 +152,7 @@
     .search-results h2 {
         font-size: 20px;
         padding-top: 13vh;
+        margin-top: 20px;
     }
 
     .filter-bar {
@@ -161,6 +163,10 @@
     .filter-button {
         width: 100%;
         text-align: center;
+    }
+
+    .search-results {
+        margin-top: 40px;
     }
 
     .product-grid {
