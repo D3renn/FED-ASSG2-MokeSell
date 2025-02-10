@@ -40,5 +40,5 @@ function fetchCategories() {
 
 function redirectToCategory(categoryId) {
     localStorage.setItem("categoryId", categoryId);
-    window.location.href = `category.html`;
+    window.location.href = `/category`;
 }

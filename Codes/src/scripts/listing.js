@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const createListingButton = document.querySelector("#createListingBtn");
 
     createListingButton.addEventListener("click", () => {
-        window.location.href = "/listingCreate.html";
+        window.location.href = "/listing/create";
     });
 
     fetchUserListings();
@@ -74,7 +74,7 @@ function fetchUserListings() {
 
 window.editListing = function(listingId) {
     localStorage.setItem("editListingId", listingId);
-    window.location.href = `listingEdit.html`;
+    window.location.href = `/listing/edit`;
 }
 
 window.deleteListing = function(listingId) {
