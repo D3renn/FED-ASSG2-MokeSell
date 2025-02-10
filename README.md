@@ -1,11 +1,13 @@
 # MokeSell
 
+- FED Assignment 2
+This is part of a Front End Development Assignment.
 This is a second-hand marketplace for users to buy and/or sell their items to other users.
 MokeSell provides a variety of items to select from such as shoes, shirts and many more.
  
 ## Design Process
  
-We took inspirations from marketplaces websites such as Ebay, Carousell and Nike. Among these websites, we identified and took inspiration from certain aspects of these websites to provide a simple yet exclusive feeling whilst they surf our website.  We chose a colour palette similar to Nike as we wanted to give the users a slightly more smooth and premium feel when using the platform. We chose a layout similar to Carousell as we wanted to give the users a simplistic interface so that it will be easy to use without any trouble finding for what they want. The website is also not very wordy as to not overwhelm our users.
+We took inspirations from marketplace websites such as Ebay, Carousell and Nike. Among these websites, we identified and took inspiration from certain aspects we liked to provide a simple yet exclusive feeling while they browse the marketpalce. We chose a colour palette similar to Nike as we wanted to give the users a slightly more smooth and premium feel when using the platform. We chose a layout similar to Carousell as we wanted to give the users a simplistic interface so that the UX will make sense and they logically know where to look. The website is also not very wordy as to not overwhelm our users.
 
 This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. 
 These files should themselves either be included as a pdf file in the project itself (in an separate directory)
