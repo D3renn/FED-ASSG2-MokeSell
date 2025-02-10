@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const listingId = localStorage.getItem("viewListingId");
 
     if (!listingId) {
-        window.location.href = "listing.html";
+        window.location.href = "/listing";
         return;
     }
 
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Add event listener to chat button
         document.querySelector(".btn-secondary").addEventListener("click", () => {
             localStorage.setItem("currentChat", data.sellerID[0]._id);
-            window.location.href = "chat.html";
+            window.location.href = "/chat";
         });
 
         document.getElementById('purchaseBtn').addEventListener('click', () => {
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     setTimeout(() => {
                         alert("Offer sent successfully!");
                         localStorage.setItem("currentChat", to);
-                        window.location.href = "chat.html";
+                        window.location.href = "/chat";
                     }, 3000); // Show alert after animation
                 })
                 .catch((error) => {
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((error) => {
         console.error("Error fetching listing:", error);
-        window.location.href = "listing.html";
+        window.location.href = "/listing";
     });
 });
 

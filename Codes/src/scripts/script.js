@@ -59,7 +59,7 @@ function setupSearch() {
         const query = searchBar.value.trim();
         if (query) {
             localStorage.setItem("searchQuery", query);
-            window.location.href = "search.html";
+            window.location.href = "/search";
         }
     });
 
@@ -68,7 +68,7 @@ function setupSearch() {
             const query = searchBar.value.trim();
             if (query) {
                 localStorage.setItem("searchQuery", query);
-                window.location.href = "search.html";
+                window.location.href = "/search";
             }
         }
     });
